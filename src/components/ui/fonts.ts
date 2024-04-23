@@ -1,7 +1,8 @@
-import {Bai_Jamjuree} from 'next/font/google'
+import {Pathway_Extreme} from 'next/font/google'
 
-export const baiJamjuree = Bai_Jamjuree({
+export const fontSans = Pathway_Extreme({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
+  display: 'swap',
 })
