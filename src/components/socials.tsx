@@ -45,7 +45,7 @@ const Socials = () => {
                 </a>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent side="bottom">
               <span>{social.label}</span>
             </TooltipContent>
           </Tooltip>

@@ -1,7 +1,12 @@
 import React from 'react'
+import {AboutSection} from '~/components/sections/home'
 
 const HomePage = () => {
-  return <p className="text-muted-foreground  text-center sm:text-left "></p>
+  return (
+    <>
+      <AboutSection />
+    </>
+  )
 }
 
 export default HomePage
