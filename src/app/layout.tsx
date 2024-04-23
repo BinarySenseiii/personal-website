@@ -3,6 +3,8 @@ import {cn} from '~/lib/utils'
 import RootProviders from '~/providers'
 import '~/styles/globals.css'
 import {ViewTransitions} from 'next-view-transitions'
+import {Metadata} from 'next'
+import site from '~/config/site'
 
 export const viewport = {
   viewportFit: 'cover',
@@ -14,6 +16,11 @@ export const viewport = {
     {media: '(prefers-color-scheme: light)', color: 'white'},
     {media: '(prefers-color-scheme: dark)', color: 'black'},
   ],
+}
+
+export const metadata: Metadata = {
+  title: site.appName,
+  description: site.appDescription,
 }
 
 export default function RootLayout({

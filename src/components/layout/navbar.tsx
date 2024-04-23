@@ -56,18 +56,14 @@ const Navbar = () => {
                   ? 'dark:text-black text-white hover:text-white'
                   : 'dark:text-slate-300 text-gray-900'
               }  transition-colors size-9 flex items-center justify-center rounded-full relative hover:opacity-90`}
-              tabIndex={-1}
               role="link"
               variant="ghost"
               asChild
+              aria-label={tab.label}
             >
               <Link href={tab.path} className="!p-0">
                 <span className="relative z-10 inline-block !text-lg">
                   {tab.icon}
-                </span>
-
-                <span aria-hidden="true" className="sr-only">
-                  {tab.label}
                 </span>
 
                 {pathName === tab.path && (
@@ -77,6 +73,7 @@ const Navbar = () => {
                     className="absolute inset-0 z-0 dark:bg-white bg-black  rounded-full"
                   ></motion.span>
                 )}
+                <span className="sr-only">{tab.label}</span>
               </Link>
             </Button>
           </TooltipTrigger>
