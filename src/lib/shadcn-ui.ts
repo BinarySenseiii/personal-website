@@ -75,6 +75,10 @@ const shadcnPlugin = plugin(
         fontFamily: {
           sans: ['var(--font-sans)', ...fontFamily.sans],
         },
+        screens: {
+          xs: '380px',
+          sm: '500px',
+        },
         colors: {
           border: 'hsl(var(--border))',
           input: 'hsl(var(--input))',
