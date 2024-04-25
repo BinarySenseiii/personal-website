@@ -18,6 +18,7 @@ const config = {
     linkedin: 'https://www.linkedin.com/in/faisal-tariq1/',
     instagram: 'https://www.instagram.com/faisal_griz/',
     discord: 'https://discord.gg/cAbzWNQw',
+    email: 'faisaltariq1812@gmail.com',
   },
 
   auth: {

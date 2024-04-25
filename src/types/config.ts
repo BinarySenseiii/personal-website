@@ -11,6 +11,7 @@ export interface ConfigProps {
     linkedin: string
     instagram: string
     discord: string
+    email: string
   }
 
   colors: {
