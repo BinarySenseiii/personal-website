@@ -39,11 +39,15 @@ const Socials = () => {
         <li key={social.id}>
           <Tooltip>
             <TooltipTrigger tabIndex={-1}>
-              <Button variant="outline" size="icon" asChild>
-                <a href={social.href} target="_blank" aria-label={social.label}>
-                  {social.icon}
-                </a>
-              </Button>
+              <a
+                href={social.href}
+                target="_blank"
+                role="link"
+                aria-label={social.label}
+                className="link-outline"
+              >
+                {social.icon}
+              </a>
             </TooltipTrigger>
             <TooltipContent side="bottom">
               <span>{social.label}</span>

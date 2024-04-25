@@ -6,7 +6,7 @@ import {usePathname} from 'next/navigation'
 import {FaRegUser} from 'react-icons/fa6'
 import {IoCallOutline, IoHomeOutline} from 'react-icons/io5'
 import {LuPencilRuler} from 'react-icons/lu'
-import {Button} from '../ui/button'
+import {cn} from '~/lib/utils'
 import {TooltipContent} from '../ui/tooltip'
 
 const tabs = [
@@ -43,38 +43,37 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed bottom-6 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-gray-950 bg-slate-50 gap-4 "
+      className="fixed bottom-6 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-[#151515] bg-[#f9f9f9] gap-4 "
       role="navigation"
     >
       {tabs.map(tab => (
         <Tooltip key={tab.label}>
           <TooltipTrigger tabIndex={-1}>
-            <Button
-              className={`${
-                pathName === tab.path
-                  ? 'dark:text-black text-white hover:text-white'
-                  : 'dark:text-slate-300 text-gray-900'
-              }  transition-colors size-9 flex items-center justify-center rounded-full relative hover:opacity-90`}
-              role="link"
-              variant="ghost"
-              asChild
+            <Link
+              href={tab.path}
+              className={cn(
+                '!p-0 link-outline rounded-full relative hover:opacity-90 border-0 dark:text-slate-300 text-gray-900',
+                {
+                  'dark:text-black text-white hover:text-white':
+                    pathName === tab.path,
+                },
+              )}
               aria-label={tab.label}
+              role="link"
             >
-              <Link href={tab.path} className="!p-0">
-                <span className="relative z-10 inline-block !text-lg">
-                  {tab.icon}
-                </span>
+              <span className="relative z-10 inline-block !text-lg">
+                {tab.icon}
+              </span>
 
-                {pathName === tab.path && (
-                  <motion.span
-                    layoutId="pill-tab"
-                    transition={{type: 'spring', duration: 0.5}}
-                    className="absolute inset-0 z-0 dark:bg-white bg-black  rounded-full"
-                  ></motion.span>
-                )}
-                <span className="sr-only">{tab.label}</span>
-              </Link>
-            </Button>
+              {pathName === tab.path && (
+                <motion.span
+                  layoutId="pill-tab"
+                  transition={{type: 'spring', duration: 0.5}}
+                  className="absolute inset-0 z-0 dark:bg-white bg-black  rounded-full"
+                ></motion.span>
+              )}
+              <span className="sr-only">{tab.label}</span>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
             <span>{tab.label}</span>

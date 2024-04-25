@@ -7,7 +7,7 @@ import ThemeToggle from '../theme-toggle'
 const Header = () => {
   return (
     <header className="my-4 gap-4 flex items-center flex-col sm:flex-row justify-between ">
-      <Link href="/" role="link">
+      <Link href="/" role="link" aria-label="Home">
         <figure className="flex items-center flex-col sm:flex-row text-center sm:text-left  gap-4">
           <Image
             src="/images/personal.webp"
@@ -19,7 +19,7 @@ const Header = () => {
           />
           <figcaption className="space-y-0">
             <h2 className="font-bold text-xl">{config.appName}</h2>
-            <p className="">{config.appDesignation}</p>
+            <p className="font-normal">{config.appDesignation}</p>
           </figcaption>
         </figure>
       </Link>
