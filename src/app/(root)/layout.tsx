@@ -4,11 +4,11 @@ import Navbar from '~/components/layout/navbar'
 
 const Layout = ({children}: {children: ReactNode}) => {
   return (
-    <main className="space-y-4 container py-4 relative">
+    <div className="space-y-4 container py-4 relative">
       <Header />
       {children}
       <Navbar />
-    </main>
+    </div>
   )
 }
 

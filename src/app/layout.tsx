@@ -7,6 +7,8 @@ import {Metadata} from 'next'
 import config from '~/config'
 import {getSEOTags, renderSchemaTags} from '~/lib/seo'
 
+const linkText = 'Skip to main content'
+
 export const viewport = {
   viewportFit: 'cover',
   width: 'device-width',
@@ -36,6 +38,9 @@ export default function RootLayout({
           )}
         >
           {renderSchemaTags()}
+          <a href="#main-content" className="sr-only" aria-label={linkText}>
+            {linkText}
+          </a>
           <RootProviders>{children}</RootProviders>
         </body>
       </html>

@@ -3,9 +3,9 @@ import {AboutSection} from '~/components/sections/home'
 
 const HomePage = () => {
   return (
-    <>
+    <main id="#main-content">
       <AboutSection />
-    </>
+    </main>
   )
 }
 

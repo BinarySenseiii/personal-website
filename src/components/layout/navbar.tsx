@@ -48,32 +48,33 @@ const Navbar = () => {
     >
       {tabs.map(tab => (
         <Tooltip key={tab.label}>
-          <TooltipTrigger tabIndex={-1}>
-            <Link
-              href={tab.path}
-              className={cn(
-                '!p-0 link-outline rounded-full relative hover:opacity-90 border-0 dark:text-slate-300 text-gray-900',
-                {
-                  'dark:text-black text-white hover:text-white':
-                    pathName === tab.path,
-                },
-              )}
-              aria-label={tab.label}
-              role="link"
-            >
-              <span className="relative z-10 inline-block !text-lg">
-                {tab.icon}
-              </span>
+          <TooltipTrigger asChild>
+            <div className="relative">
+              <Link
+                href={tab.path}
+                className={cn(
+                  '!p-0 link-outline rounded-full relative hover:opacity-90 border-0 dark:text-slate-300 text-gray-900',
+                  {
+                    'dark:text-black text-white hover:text-white':
+                      pathName === tab.path,
+                  },
+                )}
+                aria-label={tab.label}
+              >
+                <span className="relative z-10 inline-block !text-lg">
+                  {tab.icon}
+                </span>
 
-              {pathName === tab.path && (
-                <motion.span
-                  layoutId="pill-tab"
-                  transition={{type: 'spring', duration: 0.5}}
-                  className="absolute inset-0 z-0 dark:bg-white bg-black  rounded-full"
-                ></motion.span>
-              )}
-              <span className="sr-only">{tab.label}</span>
-            </Link>
+                {pathName === tab.path && (
+                  <motion.span
+                    layoutId="pill-tab"
+                    transition={{type: 'spring', duration: 0.5}}
+                    className="absolute inset-0 z-0 dark:bg-white bg-black  rounded-full"
+                  ></motion.span>
+                )}
+                <span className="sr-only">{tab.label}</span>
+              </Link>
+            </div>
           </TooltipTrigger>
           <TooltipContent>
             <span>{tab.label}</span>
