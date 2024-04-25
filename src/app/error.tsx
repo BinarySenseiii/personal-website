@@ -16,7 +16,7 @@ export default function Error({
   }, [error])
 
   return (
-    <section className="flex min-h-dvh items-center py-6">
+    <section className="flex min-h-dvh items-center py-6" id="main-content">
       <main className="container relative flex h-full w-full flex-col items-center justify-center gap-6">
         <div className="rounded-xl bg-white p-6">
           <svg

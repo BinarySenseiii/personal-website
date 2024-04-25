@@ -11,7 +11,12 @@ const SupportButton = ({onReset}: {onReset?: () => void}) => {
     <div className="flex flex-wrap justify-center gap-4">
       {typeof onReset === 'undefined' && (
         <Button asChild variant="outline">
-          <Link href="/" className="flex items-center gap-2" replace>
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            replace
+            aria-label="Home"
+          >
             <span className="text-base">
               <AiFillHome />
             </span>
@@ -25,6 +30,7 @@ const SupportButton = ({onReset}: {onReset?: () => void}) => {
           variant="outline"
           onClick={onReset}
           className="flex items-center gap-2"
+          aria-label="Reset"
         >
           <span className="text-base">
             <GrPowerReset />
@@ -39,6 +45,7 @@ const SupportButton = ({onReset}: {onReset?: () => void}) => {
           target="_blank"
           className="flex items-center gap-2"
           rel="noreferrer"
+          aria-label="Support"
         >
           <MdOutlineSupportAgent />
           Support
