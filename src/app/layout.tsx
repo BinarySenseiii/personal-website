@@ -4,7 +4,8 @@ import RootProviders from '~/providers'
 import '~/styles/globals.css'
 import {ViewTransitions} from 'next-view-transitions'
 import {Metadata} from 'next'
-import site from '~/config/site'
+import config from '~/config'
+import {getSEOTags, renderSchemaTags} from '~/lib/seo'
 
 export const viewport = {
   viewportFit: 'cover',
@@ -18,10 +19,7 @@ export const viewport = {
   ],
 }
 
-export const metadata: Metadata = {
-  title: site.appName,
-  description: site.appDescription,
-}
+export const metadata = getSEOTags()
 
 export default function RootLayout({
   children,
@@ -37,6 +35,7 @@ export default function RootLayout({
             fontSans.variable,
           )}
         >
+          {renderSchemaTags()}
           <RootProviders>{children}</RootProviders>
         </body>
       </html>

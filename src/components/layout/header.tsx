@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import site from '~/config/site'
+import config from '~/config'
 import Socials from '../socials'
 import ThemeToggle from '../theme-toggle'
 
@@ -15,10 +15,11 @@ const Header = () => {
             height={100}
             width={100}
             className="rounded-full object-cover size-16"
+            priority
           />
           <figcaption className="space-y-0">
-            <h2 className="font-bold text-xl">{site.appName}</h2>
-            <p className="">{site.appDesignation}</p>
+            <h2 className="font-bold text-xl">{config.appName}</h2>
+            <p className="">{config.appDesignation}</p>
           </figcaption>
         </figure>
       </Link>

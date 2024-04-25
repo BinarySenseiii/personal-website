@@ -1,12 +1,12 @@
 import React from 'react'
-import site from '~/config/site'
+import config from '~/config'
 
 const AboutDescription = () => {
   return (
     <section className="mt-5" aria-label="About me">
       <div className="space-y-4">
         <p className="text-muted-foreground text-center sm:text-left">
-          {site.appDescription}
+          {config.appDescription}
         </p>
 
         <p className="text-muted-foreground text-center sm:text-left">

@@ -3,14 +3,13 @@ import {Tooltip, TooltipTrigger} from '@radix-ui/react-tooltip'
 import {motion} from 'framer-motion'
 import {Link} from 'next-view-transitions'
 import {usePathname} from 'next/navigation'
-import {IoCallOutline, IoHomeOutline} from 'react-icons/io5'
-import {TooltipContent} from '../ui/tooltip'
-import {Button} from '../ui/button'
-import {LuPencilRuler} from 'react-icons/lu'
-import {MdOutlinePermContactCalendar} from 'react-icons/md'
 import {FaRegUser} from 'react-icons/fa6'
+import {IoCallOutline, IoHomeOutline} from 'react-icons/io5'
+import {LuPencilRuler} from 'react-icons/lu'
+import {Button} from '../ui/button'
+import {TooltipContent} from '../ui/tooltip'
 
-const t = [
+const tabs = [
   {
     label: 'Home',
     path: '/',
@@ -47,9 +46,9 @@ const Navbar = () => {
       className="fixed bottom-6 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-gray-950 bg-slate-50 gap-4 "
       role="navigation"
     >
-      {t.map(tab => (
+      {tabs.map(tab => (
         <Tooltip key={tab.label}>
-          <TooltipTrigger>
+          <TooltipTrigger tabIndex={-1}>
             <Button
               className={`${
                 pathName === tab.path

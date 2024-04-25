@@ -2,7 +2,7 @@ import {Linkedin} from 'lucide-react'
 import {FaInstagram} from 'react-icons/fa6'
 import {FiGithub} from 'react-icons/fi'
 import {TbBrandDiscord} from 'react-icons/tb'
-import site from '~/config/site'
+import config from '~/config'
 import {Button} from './ui/button'
 import {Tooltip, TooltipContent, TooltipTrigger} from './ui/tooltip'
 
@@ -11,25 +11,25 @@ const socialsIcons = [
     id: 1,
     label: 'Github',
     icon: <FiGithub className="size-[1.2rem]" />,
-    href: site.social.github,
+    href: config.social.github,
   },
   {
     id: 2,
     label: 'Linkedin',
     icon: <Linkedin className="size-[1.2rem]" />,
-    href: site.social.linkedin,
+    href: config.social.linkedin,
   },
   {
     id: 3,
     label: 'Instagram',
     icon: <FaInstagram className="size-[1.2rem]" />,
-    href: site.social.instagram,
+    href: config.social.instagram,
   },
   {
     id: 4,
     label: 'Discord',
     icon: <TbBrandDiscord className="size-[1.2rem]" />,
-    href: site.social.discord,
+    href: config.social.discord,
   },
 ]
 const Socials = () => {
