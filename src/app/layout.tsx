@@ -38,7 +38,11 @@ export default function RootLayout({
           )}
         >
           {renderSchemaTags()}
-          <a href="#main-content" className="sr-only" aria-label={linkText}>
+          <a
+            href="#main-content"
+            className="sr-only"
+            aria-label="Skip to main content"
+          >
             {linkText}
           </a>
           <RootProviders>{children}</RootProviders>

@@ -3,11 +3,13 @@ import {Tooltip, TooltipTrigger} from '@radix-ui/react-tooltip'
 import {motion} from 'framer-motion'
 import {Link} from 'next-view-transitions'
 import {usePathname} from 'next/navigation'
+import {FaEdit} from 'react-icons/fa'
 import {FaRegUser} from 'react-icons/fa6'
-import {IoCallOutline, IoHomeOutline} from 'react-icons/io5'
+import {IoHomeOutline} from 'react-icons/io5'
 import {LuPencilRuler} from 'react-icons/lu'
 import {cn} from '~/lib/utils'
 import {TooltipContent} from '../ui/tooltip'
+import {FiEdit} from 'react-icons/fi'
 
 const tabs = [
   {
@@ -32,9 +34,9 @@ const tabs = [
   },
 
   {
-    label: 'Contact',
-    path: '/contact',
-    icon: <IoCallOutline />,
+    label: 'Guests',
+    path: '/guests',
+    icon: <FiEdit />,
   },
 ]
 
@@ -43,7 +45,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed bottom-6 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-[#151515] bg-[#f9f9f9] gap-4 "
+      className="fixed bottom-6 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-[#0e0e0e] bg-[#f9f9f9] gap-4 "
       role="navigation"
     >
       {tabs.map(tab => (

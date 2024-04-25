@@ -3,13 +3,11 @@ import config from '~/config'
 
 const AboutDescription = () => {
   return (
-    <section className="mt-5" aria-label="About me">
-      <div className="space-y-4">
-        <p className="text-muted-foreground text-center sm:text-left">
-          {config.appDescription}
-        </p>
+    <section aria-label="About me">
+      <div className="space-y-2">
+        <p className="text-muted-foreground">{config.appDescription}</p>
 
-        <p className="text-muted-foreground text-center sm:text-left">
+        <p className="text-muted-foreground">
           My journey into web development started with a solid foundation in
           design principles, cultivated during my education. I hold a degree in
           Web Development from Cisco Networking Academy, where I not only
@@ -17,7 +15,7 @@ const AboutDescription = () => {
           for the fusion of aesthetics and functionality.
         </p>
 
-        <p className="text-muted-foreground text-center sm:text-left">
+        <p className="text-muted-foreground">
           My expertise spans a wide array of technologies including HTML5, CSS3,
           JavaScript, and ReactJS. Additionally, I&apos;m proficient in various
           design tools such as Adobe Creative Suite and Figma. I&apos;m
