@@ -1,13 +1,9 @@
+import {ViewTransitions} from 'next-view-transitions'
 import {fontSans} from '~/components/ui/fonts'
+import {getSEOTags, renderSchemaTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
 import RootProviders from '~/providers'
 import '~/styles/globals.css'
-import {ViewTransitions} from 'next-view-transitions'
-import {Metadata} from 'next'
-import config from '~/config'
-import {getSEOTags, renderSchemaTags} from '~/lib/seo'
-
-const linkText = 'Skip to main content'
 
 export const viewport = {
   viewportFit: 'cover',
@@ -38,12 +34,8 @@ export default function RootLayout({
           )}
         >
           {renderSchemaTags()}
-          <a
-            href="#main-content"
-            className="sr-only"
-            aria-label="Skip to main content"
-          >
-            {linkText}
+          <a href="#main-content" className="sr-only">
+            Skip to main content
           </a>
           <RootProviders>{children}</RootProviders>
         </body>
