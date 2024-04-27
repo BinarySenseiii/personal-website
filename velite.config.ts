@@ -7,7 +7,7 @@ const computedFields = <T extends {slug: string}>(data: T) => ({
 
 const posts = defineCollection({
   name: 'Post',
-  pattern: 'posts/**/*.md',
+  pattern: 'posts/**/*.mdx',
   schema: s
     .object({
       title: s.string().max(99),
@@ -16,12 +16,14 @@ const posts = defineCollection({
       date: s.isodate(),
       published: s.boolean().default(true),
       body: s.mdx(),
+      toc: s.toc(),
+      metadata: s.metadata(),
     })
     .transform(computedFields),
 })
 
 export default defineConfig({
-  root: 'content',
+  root: 'src/content',
   output: {
     data: '.velite',
     assets: 'public/static',
