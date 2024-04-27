@@ -6,7 +6,7 @@ const Layout = ({children}: {children: ReactNode}) => {
   return (
     <div className="space-y-4 container py-4 relative">
       <Header />
-      {children}
+      <div className="pb-14">{children}</div>
       <Navbar />
     </div>
   )
