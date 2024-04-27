@@ -72,6 +72,13 @@ const shadcnPlugin = plugin(
         },
       },
       extend: {
+        typography: {
+          DEFAULT: {
+            css: {
+              maxWidth: '100ch', // add required value here
+            },
+          },
+        },
         fontFamily: {
           sans: ['var(--font-sans)', ...fontFamily.sans],
         },

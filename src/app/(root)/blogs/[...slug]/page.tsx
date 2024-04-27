@@ -3,6 +3,8 @@ import {notFound} from 'next/navigation'
 import React from 'react'
 import {MDXContent} from '~/components/mdx-content'
 import {workSans} from '~/components/ui/fonts'
+import {cn} from '~/lib/utils'
+import '~/styles/mdx.css'
 
 interface BlogPostParams {
   params: {
@@ -27,11 +29,14 @@ export default async function BlogDetail({params}: BlogPostParams) {
   const post = await getPostFromParams(params)
 
   return (
-    <article>
+    <article className="w-full">
       {post.title}
-      <div className={workSans.className}>
+      <main
+        id="main-content"
+        className={cn(workSans.className, 'prose dark:prose-invert !w-full')}
+      >
         <MDXContent code={post.body} />
-      </div>
+      </main>
     </article>
   )
 }

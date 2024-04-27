@@ -1,8 +1,10 @@
 import * as runtime from 'react/jsx-runtime'
 import Image from 'next/image'
+import Callout from '~/components/ui/callout'
 
 const sharedComponents = {
   Image,
+  Callout,
 }
 
 const useMDXComponent = (code: string) => {
