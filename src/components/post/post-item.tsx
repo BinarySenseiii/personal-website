@@ -2,11 +2,10 @@ import {Post} from '#site/content'
 import {Calendar, Timer} from 'lucide-react'
 import React from 'react'
 
-import {Card, CardContent} from '~/components/ui/card'
-import {cn, formatDate} from '~/lib/utils'
-import {workSans} from '../ui/fonts'
 import {Link} from 'next-view-transitions'
-import {buttonVariants} from '../ui/button'
+import {Card, CardContent} from '~/components/ui/card'
+import {formatDate} from '~/lib/utils'
+import {workSans} from '../ui/fonts'
 
 const PostItem: React.FC<Post> = ({
   slug,
@@ -20,11 +19,15 @@ const PostItem: React.FC<Post> = ({
     <li key={slug} role="listitem">
       <Card>
         <Link
-          href={`/blog/${slugAsParams}`}
-          className="rounded-md el-focus-styles inline-block"
+          href={`/blogs/${slugAsParams}`}
+          className="rounded-md el-focus-styles inline-block group"
         >
           <hgroup className="p-3 space-y-2">
-            <h3 className={`font-semibold text-lg`}>{title}</h3>
+            <h3
+              className={`font-semibold text-lg transition-colors group-hover:text-ring group-hover:underline`}
+            >
+              {title}
+            </h3>
 
             <div className="flex items-center gap-2">
               <dl>
