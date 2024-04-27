@@ -1,4 +1,5 @@
 import {defineConfig, defineCollection, s} from 'velite'
+import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -39,7 +40,8 @@ export default defineConfig({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, {theme: 'github-dark'}],
+      rehypeCodeTitles,
+      [rehypePrettyCode, {theme: 'night-owl'}],
       [
         rehypeAutolinkHeadings,
         {

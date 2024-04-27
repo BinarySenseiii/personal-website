@@ -1,10 +1,14 @@
 import {posts} from '#site/content'
+import {MoveLeft} from 'lucide-react'
+import {Link} from 'next-view-transitions'
 import Image from 'next/image'
 import {notFound} from 'next/navigation'
-import React from 'react'
+import BackButton from '~/components/back-btn'
 import {MDXContent} from '~/components/mdx-content'
 import PostMetadata from '~/components/post/post-metadata'
-import {workSans} from '~/components/ui/fonts'
+import PostTableOfContent from '~/components/post/post-toc'
+import {Button} from '~/components/ui/button'
+import {dankMono} from '~/components/ui/fonts'
 import {cn} from '~/lib/utils'
 import '~/styles/mdx.css'
 
@@ -32,7 +36,16 @@ export default async function BlogDetail({params}: BlogPostParams) {
 
   return (
     <article id="main-content" className="w-full">
-      <div className="space-y-6 mb-6">
+      <BackButton>Back to Posts</BackButton>
+      <div className="space-y-6 mb-6 mt-2">
+        <PostMetadata
+          isDetailPage
+          title={post.title}
+          description={post.description}
+          metadata={post.metadata}
+          date={post.date}
+        />
+
         <div className="relative aspect-video">
           <Image
             src={post.cover}
@@ -43,15 +56,14 @@ export default async function BlogDetail({params}: BlogPostParams) {
             className="rounded-md size-full object-cover"
           />
         </div>
-        <PostMetadata
-          isDetailPage
-          title={post.title}
-          description={post.description}
-          metadata={post.metadata}
-          date={post.date}
-        />
+        <PostTableOfContent toc={post.toc} />
       </div>
-      <main id="main-content" className={cn('prose dark:prose-invert !w-full')}>
+      <main
+        id="main-content"
+        className={cn(
+          `prose dark:prose-invert mdx-content !w-full [&>figure>pre]:font-dank`,
+        )}
+      >
         <MDXContent code={post.body} />
       </main>
     </article>

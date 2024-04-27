@@ -1,7 +1,11 @@
-import {Bai_Jamjuree, Work_Sans, Ubuntu} from 'next/font/google'
+import {Bai_Jamjuree, Ubuntu} from 'next/font/google'
+import localFont from 'next/font/local'
 
-// Work_Sans
-// EA80FC
+export const dankMono = localFont({
+  src: './dank-mono.otf',
+  display: 'swap',
+  variable: '--font-dank',
+})
 
 export const fontSans = Bai_Jamjuree({
   subsets: ['latin'],
@@ -9,8 +13,8 @@ export const fontSans = Bai_Jamjuree({
   variable: '--font-sans',
 })
 
-export const workSans = Ubuntu({
+export const ubuntu = Ubuntu({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--work-sans',
+  variable: '--font-ubuntu',
 })

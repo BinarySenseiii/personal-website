@@ -1,8 +1,7 @@
+import {Post} from '#site/content'
 import {Calendar, Timer} from 'lucide-react'
 import React from 'react'
 import {cn, formatDate} from '~/lib/utils'
-import {workSans} from '../ui/fonts'
-import {Post} from '#site/content'
 
 interface PostMetaProps {
   title: string
@@ -72,8 +71,7 @@ const PostMetadata: React.FC<PostMetaProps> = ({
 
       <p
         className={cn(
-          workSans.className,
-          'text-muted-foreground text-sm line-clamp-2',
+          'text-muted-foreground text-sm line-clamp-2 font-ubuntu',
           {
             'line-clamp-none text-base': isDetailPage,
           },

@@ -81,6 +81,8 @@ const shadcnPlugin = plugin(
         },
         fontFamily: {
           sans: ['var(--font-sans)', ...fontFamily.sans],
+          ubuntu: 'var(--font-ubuntu)',
+          dank: 'var(--font-dank)',
         },
         screens: {
           xs: '380px',

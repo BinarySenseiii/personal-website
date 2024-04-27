@@ -1,5 +1,5 @@
 import {ViewTransitions} from 'next-view-transitions'
-import {fontSans} from '~/components/ui/fonts'
+import {dankMono, fontSans, ubuntu} from '~/components/ui/fonts'
 import {getSEOTags, renderSchemaTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
 import RootProviders from '~/providers'
@@ -31,6 +31,8 @@ export default function RootLayout({
           className={cn(
             'min-h-screen bg-background font-sans antialiased',
             fontSans.variable,
+            ubuntu.variable,
+            dankMono.variable,
           )}
         >
           {renderSchemaTags()}

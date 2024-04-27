@@ -21,7 +21,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {
-  background: rgba(200, 200, 255, 0.1);
+  background: rgba(21, 21, 205, 0.1);
   @apply border-l-blue-400;
 }
 
@@ -35,5 +35,34 @@
 }
 
 .subheading-anchor {
-  @apply no-underline hover:underline;
+  @apply no-underline hover:underline text-xl el-focus-styles;
+}
+
+.mdx-content p {
+  @apply text-base my-0 mt-3 text-muted-foreground font-ubuntu;
+}
+
+.mdx-content p code {
+  @apply font-ubuntu;
+}
+
+.mdx-content p a {
+  @apply text-ring el-focus-styles;
+}
+
+.mdx-content h2,
+.mdx-content h1 {
+  @apply mt-3 mb-0;
+}
+
+.mdx-content figure {
+  @apply my-6;
+}
+
+.mdx-content hr {
+  @apply my-6;
+}
+
+* {
+  scroll-behavior: smooth;
 }
