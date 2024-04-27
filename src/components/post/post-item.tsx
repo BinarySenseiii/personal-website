@@ -1,11 +1,8 @@
 import {Post} from '#site/content'
-import {Calendar, Timer} from 'lucide-react'
 import React from 'react'
 
 import {Link} from 'next-view-transitions'
 import {Card, CardContent} from '~/components/ui/card'
-import {formatDate} from '~/lib/utils'
-import {workSans} from '../ui/fonts'
 import PostMetadata from './post-metadata'
 
 const PostItem: React.FC<Post> = ({
