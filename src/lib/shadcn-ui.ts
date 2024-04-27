@@ -26,7 +26,7 @@ const shadcnPlugin = plugin(
         '--destructive-foreground': '0 0% 98%',
         '--border': '240 5.9% 90%',
         '--input': '240 5.9% 90%',
-        '--ring': '240 10% 3.9%',
+        '--ring': '321, 100%, 38%',
         '--radius': '0.5rem',
       },
       '.dark': {
@@ -48,7 +48,7 @@ const shadcnPlugin = plugin(
         '--destructive-foreground': '0 0% 98%',
         '--border': '240 3.7% 15.9%',
         '--input': '240 3.7% 15.9%',
-        '--ring': '240 4.9% 83.9%',
+        '--ring': '182.7 100.0% 35.5%',
       },
     }),
       addBase({
