@@ -1,6 +1,8 @@
 import {Post} from '#site/content'
 import {type ClassValue, clsx} from 'clsx'
+
 import {twMerge} from 'tailwind-merge'
+import config from '~/config'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -22,3 +24,5 @@ export function sortPosts(posts: Array<Post>) {
     return 0
   })
 }
+
+export const BasePath = (path: string) => `https://${config.domainName}${path}`

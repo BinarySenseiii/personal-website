@@ -3,15 +3,14 @@ import React from 'react'
 
 const PostTableOfContent = ({toc}: {toc: Post['toc']}) => {
   return (
-    // Todo: ui need to update #Sticky as sidebar
-    <div className="min-h-8 w-full bg-[#f5f5f5] dark:bg-[#131313] p-4 rounded-md">
-      <h2 className="font-semibold text-xl">Table of Content</h2>
-      <ul role="list" className="space-y-2 mt-2 list-disc list-inside">
+    <aside className=" sticky top-4 w-max">
+      <h2 className="font-semibold text-sm font-ubuntu">ON THIS PAGE</h2>
+      <ul role="list" className="space-y-0 mt-2 ">
         {toc.map(t => (
-          <li key={t.url} className="" role="listitem">
+          <li key={t.url} className="text-sm" role="listitem">
             <a
               href={t.url}
-              className="el-focus-styles rounded-sm hover:underline text-ring"
+              className="el-focus-styles rounded-sm hover:underline text-ring whitespace-nowrap"
               aria-label={`Go to ${t.title}`}
             >
               {t.title}
@@ -19,7 +18,7 @@ const PostTableOfContent = ({toc}: {toc: Post['toc']}) => {
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   )
 }
 

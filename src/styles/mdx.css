@@ -50,8 +50,13 @@
   @apply text-ring el-focus-styles;
 }
 
+.mdx-content p:first-child {
+  @apply mt-0;
+}
+
 .mdx-content h2,
-.mdx-content h1 {
+.mdx-content h1,
+.mdx-content h5 {
   @apply mt-3 mb-0;
 }
 
@@ -61,6 +66,13 @@
 
 .mdx-content hr {
   @apply my-6;
+}
+
+.mdx-content figure,
+.mdx-content code,
+.mdx-content pre,
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply !font-dank;
 }
 
 * {

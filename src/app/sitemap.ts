@@ -1,40 +1,35 @@
+import {posts} from '#site/content'
 import {MetadataRoute} from 'next'
-import config from '~/config'
+import {BasePath} from '~/lib/utils'
 
-const BASE_URL = `https://${config.domainName}`
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogPosts = posts.map(post => ({
+    url: BasePath(`/blog/${post.slugAsParams.split('/')}`),
+    lastModified: post.date,
+  }))
 
-export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: BASE_URL,
+      url: BasePath(''),
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
     },
 
     {
-      url: `${BASE_URL}/blogs`,
+      url: BasePath('/blog'),
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
     },
     {
-      url: `${BASE_URL}/projects`,
+      url: BasePath('/projects'),
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
-      url: `${BASE_URL}/about`,
+      url: BasePath('/about'),
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
     },
     {
-      url: `${BASE_URL}/contact`,
+      url: BasePath('/contact'),
       lastModified: new Date(),
-      changeFrequency: 'never',
-      priority: 1,
     },
+    ...blogPosts,
   ]
 }

@@ -68,7 +68,7 @@ const shadcnPlugin = plugin(
         center: true,
         padding: '1rem',
         screens: {
-          xl: '49rem',
+          xl: '48rem',
         },
       },
       extend: {

@@ -52,16 +52,18 @@ export default async function BlogDetail({params}: BlogPostParams) {
             className="rounded-md size-full object-cover"
           />
         </div>
-        <PostTableOfContent toc={post.toc} />
       </div>
-      <main
-        id="main-content"
-        className={cn(
-          `prose dark:prose-invert mdx-content !w-full [&>figure>pre]:font-dank`,
-        )}
-      >
-        <MDXContent code={post.body} />
-      </main>
+      <div className="flex items-start gap-4">
+        <div
+          id="main-content"
+          className={cn(
+            `prose dark:prose-invert mdx-content col-span-2 !w-full`,
+          )}
+        >
+          <MDXContent code={post.body} />
+        </div>
+        {/* <PostTableOfContent toc={post.toc} /> */}
+      </div>
     </article>
   )
 }

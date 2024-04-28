@@ -3,13 +3,12 @@ import {Tooltip, TooltipTrigger} from '@radix-ui/react-tooltip'
 import {motion} from 'framer-motion'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
-import {FaEdit} from 'react-icons/fa'
 import {FaRegUser} from 'react-icons/fa6'
+import {FiEdit} from 'react-icons/fi'
 import {IoHomeOutline} from 'react-icons/io5'
 import {LuPencilRuler} from 'react-icons/lu'
 import {cn} from '~/lib/utils'
 import {TooltipContent} from '../ui/tooltip'
-import {FiEdit} from 'react-icons/fi'
 
 const tabs = [
   {
