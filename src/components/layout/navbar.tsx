@@ -1,7 +1,7 @@
 'use client'
 import {Tooltip, TooltipTrigger} from '@radix-ui/react-tooltip'
 import {motion} from 'framer-motion'
-import {Link} from 'next-view-transitions'
+import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {FaEdit} from 'react-icons/fa'
 import {FaRegUser} from 'react-icons/fa6'

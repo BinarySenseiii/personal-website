@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button} from '../ui/button'
-import {Link} from 'next-view-transitions'
+import Link from 'next/link'
 import PostItem from './post-item'
 import {Post} from '#site/content'
 

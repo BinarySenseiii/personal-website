@@ -1,4 +1,3 @@
-import {ViewTransitions} from 'next-view-transitions'
 import {dankMono, fontSans, ubuntu} from '~/components/ui/fonts'
 import {getSEOTags, renderSchemaTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
@@ -25,23 +24,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            'min-h-screen bg-background font-sans antialiased',
-            fontSans.variable,
-            ubuntu.variable,
-            dankMono.variable,
-          )}
-        >
-          {renderSchemaTags()}
-          <a href="#main-content" className="sr-only">
-            Skip to main content
-          </a>
-          <RootProviders>{children}</RootProviders>
-        </body>
-      </html>
-    </ViewTransitions>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+          ubuntu.variable,
+          dankMono.variable,
+        )}
+      >
+        {renderSchemaTags()}
+        <a href="#main-content" className="sr-only">
+          Skip to main content
+        </a>
+        <RootProviders>{children}</RootProviders>
+      </body>
+    </html>
   )
 }

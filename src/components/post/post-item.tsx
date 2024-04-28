@@ -1,7 +1,7 @@
 import {Post} from '#site/content'
 import React from 'react'
 
-import {Link} from 'next-view-transitions'
+import Link from 'next/link'
 import {Card, CardContent} from '~/components/ui/card'
 import PostMetadata from './post-metadata'
 
@@ -15,7 +15,7 @@ const PostItem: React.FC<Post> = ({
 }) => {
   return (
     <li key={slug} role="listitem">
-      <Card>
+      <Card className="p-0 border-0 border-b shadow-none rounded-none pb-2">
         <Link
           href={`/blog/${slugAsParams}`}
           className="rounded-md el-focus-styles inline-block group"
