@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed bottom-2 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-[#0e0e0e] bg-[#f9f9f9] gap-4 "
+      className="fixed bottom-2 z-50 left-2/4 -translate-x-2/4  rounded-lg py-2 flex items-center w-fit px-3  dark:bg-[#0e0e0e] bg-[#f9f9f9] gap-4 "
       role="navigation"
     >
       {tabs.map(tab => (
