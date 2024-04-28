@@ -6,7 +6,6 @@ import {BasePath} from '~/lib/utils'
 export async function GET() {
   const feed = new RSS({
     title: `${config.appName} Personal Website`,
-    description: `${config.appDescription}`,
     generator: 'RSS for Personal Portfolio',
     feed_url: BasePath('/feed.xml'),
     site_url: BasePath('/'),
@@ -18,9 +17,6 @@ export async function GET() {
     language: 'en-US',
     pubDate: new Date().toUTCString(),
     ttl: 60,
-    custom_elements: [
-      {author: [{name: config.appName}, {email: config.social.email}]},
-    ],
   })
 
   posts.forEach(post => {
@@ -29,16 +25,7 @@ export async function GET() {
       url: BasePath(`/blog/${post.slugAsParams.split('/')}`),
       date: post.date,
       description: post.description,
-      custom_elements: [
-        {
-          content: {
-            _cdata: post.body,
-            _attr: {
-              type: 'html',
-            },
-          },
-        },
-      ],
+      author: 'Faisal Tariq',
     })
   })
 
