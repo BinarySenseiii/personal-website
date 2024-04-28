@@ -1,7 +1,7 @@
 import {ConfigProps} from './types/config'
 
 const config = {
-  appName: 'FAISAL TARIQ',
+  appName: 'Faisal Tariq',
   appDesignation: 'Frontend React Specialist',
   appDescription: `Hi, I'm Faisal, Frontend developer from the UAE. Skilled in
   HTML, CSS, JavaScript, and React. I create pixel-perfect, cross-browser

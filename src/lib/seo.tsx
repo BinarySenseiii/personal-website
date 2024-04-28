@@ -16,7 +16,18 @@ export const getSEOTags = ({
   return {
     title: title || config.appName,
     description: description || config.appDescription,
-    keywords: keywords || [config.appName],
+    keywords: keywords || [
+      'portfolio',
+      'personal portfolio',
+      'web developer',
+      'software engineer',
+      'front-end developer',
+      'creative',
+      'coder',
+      'programmer',
+      'developer',
+      'portfolio website',
+    ],
     applicationName: config.appName,
 
     metadataBase: new URL(
