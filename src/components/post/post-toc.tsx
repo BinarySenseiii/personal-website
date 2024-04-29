@@ -17,7 +17,6 @@ const PostTableOfContent = ({toc}: {toc: Post['toc']}) => {
 
   // Recursive function to render TOC items
   const renderTocItems = (items: Post['toc']) => {
-    console.log('items::: ', items)
     return (
       <ol role="list" className="space-y-2 list-disc mt-2 ps-4">
         {items.map(item => (

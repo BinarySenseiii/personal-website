@@ -4,8 +4,12 @@ import {notFound} from 'next/navigation'
 import Script from 'next/script'
 import BackButton from '~/components/back-btn'
 import {MDXContent} from '~/components/mdx-content'
-import PostMetadata from '~/components/post/post-metadata'
-import PostTableOfContent from '~/components/post/post-toc'
+import {
+  PostComments,
+  TableOfContent,
+  PostMetadata,
+  JsonSchemaLD,
+} from '~/components/post'
 import config from '~/config'
 import {getSEOTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
@@ -62,32 +66,7 @@ export default async function BlogDetail({params}: BlogPostParams) {
   return (
     <>
       {/* SCHEMA JSON-LD MARKUP FOR GOOGLE */}
-      <Script
-        type="application/ld+json"
-        id={`json-ld-article-${post.slug.split('/')}`}
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://${config.domainName}/blog/${post.slug.split(
-                '/',
-              )}`,
-            },
-            name: post.title,
-            headline: post.title,
-            description: post.description,
-            image: `https://${config.domainName}${post.cover}`,
-            datePublished: post.date,
-            dateModified: post.date,
-            author: {
-              '@type': 'Person',
-              name: 'Faisal tariq',
-            },
-          }),
-        }}
-      />
+      <JsonSchemaLD post={post} />
 
       <article id="main-content" className="w-full">
         <BackButton>Back to Posts</BackButton>
@@ -100,7 +79,7 @@ export default async function BlogDetail({params}: BlogPostParams) {
             date={post.date}
           />
 
-          <PostTableOfContent toc={post.toc} />
+          <TableOfContent toc={post.toc} />
 
           <div className="relative aspect-video">
             <Image
@@ -121,6 +100,8 @@ export default async function BlogDetail({params}: BlogPostParams) {
         >
           <MDXContent code={post.body} />
         </main>
+
+        <PostComments />
       </article>
     </>
   )
