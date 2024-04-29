@@ -18,8 +18,8 @@ const PostComments = () => {
         term="Welcome to @giscus/react component!"
         reactionsEnabled="1"
         emitMetadata="0"
-        inputPosition="bottom"
-        theme={theme}
+        inputPosition="top"
+        theme={theme === 'system' ? 'preferred_color_scheme' : theme}
         lang="en"
         loading="lazy"
       />
