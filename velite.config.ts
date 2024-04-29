@@ -41,7 +41,7 @@ export default defineConfig({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      [rehypePrettyCode, {theme: 'github-dark'}],
+      [rehypePrettyCode, {theme: 'catppuccin-mocha'}],
       [
         rehypeAutolinkHeadings,
         {

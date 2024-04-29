@@ -107,3 +107,10 @@
   height: 100%;
   width: 100%;
 }
+
+.mdx-content span[data-line] span[style='color:#6C7086;font-style:italic'],
+.mdx-content
+  span[data-line]
+  span[style='color: rgb(108, 112, 134); font-style: italic;'] {
+  @apply !text-[#8286a1];
+}
