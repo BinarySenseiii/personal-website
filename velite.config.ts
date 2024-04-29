@@ -3,6 +3,7 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import {defineCollection, defineConfig, s} from 'velite'
+import rehypeExternalLink from 'rehype-external-links'
 
 const computedFields = <T extends {slug: string}>(data: T) => ({
   ...data,
@@ -51,6 +52,12 @@ export default defineConfig({
             className: ['subheading-anchor'],
             ariaLabel: 'Link to section',
           },
+        },
+      ],
+      [
+        rehypeExternalLink,
+        {
+          properties: {target: '_blank', rel: 'noopener noreferrer'},
         },
       ],
     ],

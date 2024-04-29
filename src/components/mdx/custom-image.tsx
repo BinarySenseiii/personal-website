@@ -1,6 +1,6 @@
 import Image, {ImageProps} from 'next/image'
 
-export const ArticleImage: React.FC<ImageProps> = ({...props}) => {
+const CustomImage: React.FC<ImageProps> = ({...props}) => {
   return (
     <div className="aspect-video relative mt-3">
       <Image
@@ -14,3 +14,5 @@ export const ArticleImage: React.FC<ImageProps> = ({...props}) => {
     </div>
   )
 }
+
+export default CustomImage

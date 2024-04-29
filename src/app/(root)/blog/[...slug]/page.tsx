@@ -1,17 +1,15 @@
 import {posts} from '#site/content'
 import Image from 'next/image'
 import {notFound} from 'next/navigation'
-import Script from 'next/script'
 import BackButton from '~/components/back-btn'
-import {MDXContent} from '~/components/mdx-content'
+import {MDXContent} from '~/components/mdx'
 import {
-  PostComments,
-  TableOfContent,
-  PostMetadata,
   JsonSchemaLD,
+  PostComments,
+  PostMetadata,
+  TableOfContent,
 } from '~/components/post'
 import Tags from '~/components/tags'
-import config from '~/config'
 import {getSEOTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
 import '~/styles/mdx.css'
@@ -102,9 +100,9 @@ export default async function BlogDetail({params}: BlogPostParams) {
           <MDXContent code={post.body} />
         </main>
 
-        <div className="my-4 space-y-2">
+        <div className="my-4 space-y-1">
           <hr className="!mb-4" />
-          <h3 className="font-medium"> Tags</h3>
+          <h3 className="font-bold">Tags</h3>
           <Tags tags={post.tags} />
         </div>
 

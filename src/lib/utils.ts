@@ -26,3 +26,18 @@ export function sortPosts(posts: Array<Post>) {
 }
 
 export const BasePath = (path: string) => `https://${config.domainName}${path}`
+
+export const getAllTags = (posts: Array<Post>) => {
+  const tags: Record<string, number> = {}
+
+  posts.forEach(post => {
+    post.tags.forEach(tag => {
+      tags[tag] = (tags[tag] ?? 0) + 1
+    })
+  })
+
+  return tags
+}
+
+export const sortedTagsCount = (tags: Record<string, number>) =>
+  Object.keys(tags).sort((a, b) => tags[b] - tags[a])

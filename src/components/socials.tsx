@@ -3,7 +3,7 @@ import {FaInstagram} from 'react-icons/fa6'
 import {FiGithub} from 'react-icons/fi'
 import {TbBrandDiscord} from 'react-icons/tb'
 import config from '~/config'
-import {Button} from './ui/button'
+import {CustomLink} from './mdx'
 import {Tooltip, TooltipContent, TooltipTrigger} from './ui/tooltip'
 
 const socialsIcons = [
@@ -39,14 +39,13 @@ const Socials = () => {
         <li key={social.id}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
+              <CustomLink
                 href={social.href}
-                target="_blank"
                 className="link-outline"
                 aria-label={social.label}
               >
                 {social.icon}
-              </a>
+              </CustomLink>
             </TooltipTrigger>
             <TooltipContent side="bottom">
               <span>{social.label}</span>

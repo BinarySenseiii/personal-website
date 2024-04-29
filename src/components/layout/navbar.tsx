@@ -1,13 +1,13 @@
 'use client'
 import {Tooltip, TooltipTrigger} from '@radix-ui/react-tooltip'
 import {motion} from 'framer-motion'
-import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {FaRegUser} from 'react-icons/fa6'
 import {FiEdit} from 'react-icons/fi'
 import {IoHomeOutline} from 'react-icons/io5'
 import {LuPencilRuler} from 'react-icons/lu'
 import {cn} from '~/lib/utils'
+import {CustomLink} from '../mdx'
 import {TooltipContent} from '../ui/tooltip'
 
 const tabs = [
@@ -51,7 +51,7 @@ const Navbar = () => {
         <Tooltip key={tab.label}>
           <TooltipTrigger asChild>
             <div className="relative">
-              <Link
+              <CustomLink
                 href={tab.path}
                 className={cn(
                   '!p-0 link-outline rounded-full relative hover:opacity-90 border-0 dark:text-slate-300 text-gray-900',
@@ -74,7 +74,7 @@ const Navbar = () => {
                   ></motion.span>
                 )}
                 <span className="sr-only">{tab.label}</span>
-              </Link>
+              </CustomLink>
             </div>
           </TooltipTrigger>
           <TooltipContent>
