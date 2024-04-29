@@ -9,10 +9,9 @@ type PostListProps = {
 
 const PostList: React.FC<PostListProps> = ({posts}) => {
   return (
-    <>
-      <div className="flex mt-8 mb-6 items-center justify-between">
+    <section aria-label="Articles" className="space-y-4 mt-8">
+      <div className="flex items-center justify-between">
         <h2 className="font-bold font-ubuntu text-lg">Latest Articles</h2>
-
         <RssFeed />
       </div>
       <ol className="space-y-4" role="list">
@@ -20,7 +19,7 @@ const PostList: React.FC<PostListProps> = ({posts}) => {
           <PostItem key={post.slug} {...post} />
         ))}
       </ol>
-    </>
+    </section>
   )
 }
 export default PostList

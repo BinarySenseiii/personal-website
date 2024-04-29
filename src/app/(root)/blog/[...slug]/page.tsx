@@ -5,6 +5,7 @@ import Script from 'next/script'
 import BackButton from '~/components/back-btn'
 import {MDXContent} from '~/components/mdx-content'
 import PostMetadata from '~/components/post/post-metadata'
+import PostTableOfContent from '~/components/post/post-toc'
 import config from '~/config'
 import {getSEOTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
@@ -31,7 +32,6 @@ export async function generateStaticParams(): Promise<
 
 export async function generateMetadata({params}: BlogPostParams) {
   const post = await getPostFromParams(params)
-  console.log('post::: ', post)
 
   return getSEOTags({
     title: post.title,
@@ -100,6 +100,8 @@ export default async function BlogDetail({params}: BlogPostParams) {
             date={post.date}
           />
 
+          <PostTableOfContent toc={post.toc} />
+
           <div className="relative aspect-video">
             <Image
               src={post.cover}
@@ -112,17 +114,13 @@ export default async function BlogDetail({params}: BlogPostParams) {
             />
           </div>
         </div>
-        <div className="flex items-start gap-4">
-          <div
-            id="main-content"
-            className={cn(
-              `prose dark:prose-invert mdx-content col-span-2 !w-full`,
-            )}
-          >
-            <MDXContent code={post.body} />
-          </div>
-          {/* <PostTableOfContent toc={post.toc} /> */}
-        </div>
+
+        <main
+          id="main-content"
+          className={cn(`prose dark:prose-invert mdx-content  !w-full`)}
+        >
+          <MDXContent code={post.body} />
+        </main>
       </article>
     </>
   )
