@@ -1,9 +1,11 @@
 import * as runtime from 'react/jsx-runtime'
-import Image from 'next/image'
 import Callout from '~/components/ui/callout'
+import {ArticleImage} from './ui/embed'
+import {YouTubeEmbed} from '@next/third-parties/google'
 
 const sharedComponents = {
-  Image,
+  ArticleImage,
+  YouTubeEmbed,
   Callout,
 }
 

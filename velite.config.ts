@@ -1,8 +1,8 @@
-import {defineConfig, defineCollection, s} from 'velite'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import {defineCollection, defineConfig, s} from 'velite'
 
 const computedFields = <T extends {slug: string}>(data: T) => ({
   ...data,
@@ -41,7 +41,7 @@ export default defineConfig({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      [rehypePrettyCode, {theme: 'night-owl'}],
+      [rehypePrettyCode, {theme: 'github-dark'}],
       [
         rehypeAutolinkHeadings,
         {

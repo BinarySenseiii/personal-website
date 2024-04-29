@@ -5,6 +5,7 @@ import {useTheme} from 'next-themes'
 
 const PostComments = () => {
   const {theme} = useTheme()
+
   return (
     <div className="w-full mt-4">
       <Giscus

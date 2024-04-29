@@ -64,6 +64,21 @@
   @apply my-6;
 }
 
+.mdx-content ol,
+.mdx-content ul {
+  @apply my-3 ps-[14px];
+}
+
+.mdx-content ol a,
+.mdx-content ul a {
+  @apply el-focus-styles hover:text-ring hover:underline;
+}
+
+.mdx-content ol li,
+.mdx-content ul li {
+  @apply ps-[2px];
+}
+
 .mdx-content hr {
   @apply my-6;
 }
@@ -72,9 +87,23 @@
 .mdx-content code,
 .mdx-content pre,
 [data-rehype-pretty-code-figure] [data-line] {
-  @apply !font-dank;
+  @apply !font-dank el-focus-styles;
 }
 
 * {
   scroll-behavior: smooth;
+}
+
+.mdx-content div[data-ntpc='YouTubeEmbed'] {
+  margin-top: 0.75rem;
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+.mdx-content div[data-ntpc='YouTubeEmbed'] lite-youtube {
+  border-radius: 6px;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
 }
