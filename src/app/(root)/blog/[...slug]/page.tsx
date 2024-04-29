@@ -10,6 +10,7 @@ import {
   PostMetadata,
   JsonSchemaLD,
 } from '~/components/post'
+import Tags from '~/components/tags'
 import config from '~/config'
 import {getSEOTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
@@ -100,6 +101,12 @@ export default async function BlogDetail({params}: BlogPostParams) {
         >
           <MDXContent code={post.body} />
         </main>
+
+        <div className="my-4 space-y-2">
+          <hr className="!mb-4" />
+          <h3 className="font-medium"> Tags</h3>
+          <Tags tags={post.tags} />
+        </div>
 
         <PostComments />
       </article>
