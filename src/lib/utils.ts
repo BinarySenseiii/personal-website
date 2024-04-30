@@ -1,3 +1,4 @@
+import {slug} from 'github-slugger'
 import {Post} from '#site/content'
 import {type ClassValue, clsx} from 'clsx'
 
@@ -41,3 +42,11 @@ export const getAllTags = (posts: Array<Post>) => {
 
 export const sortedTagsCount = (tags: Record<string, number>) =>
   Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+
+export function getPostsByTagSlug(posts: Array<Post>, tag: string) {
+  return posts.filter(post => {
+    if (!post.tags) return false
+    const slugifiedTags = post.tags.map(tag => slug(tag))
+    return slugifiedTags.includes(tag)
+  })
+}

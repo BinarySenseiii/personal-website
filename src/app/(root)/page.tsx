@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <main id="#main-content">
       <AboutSection />
-      <PostList posts={sortedPosts} />
+      <PostList posts={sortedPosts} showRss />
       <Skills />
     </main>
   )
