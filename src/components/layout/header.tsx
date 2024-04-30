@@ -6,7 +6,7 @@ import ThemeToggle from '../theme-toggle'
 
 const Header = () => {
   return (
-    <header className="my-4 gap-4 flex sm:items-center justify-between flex-wrap">
+    <header className="mt-2 mb-4 sm:my-4 gap-4 flex sm:items-center justify-between flex-wrap">
       <Link
         href="/"
         role="link"
