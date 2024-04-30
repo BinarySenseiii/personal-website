@@ -15,10 +15,9 @@ const PostItem: React.FC<Post> = ({
   slugAsParams,
   tags,
 }) => {
-  console.log('tags::: ', tags)
   return (
     <li key={slug} role="listitem">
-      <Card className="p-0 border-0 border-b shadow-none rounded-none pb-2">
+      <Card className="p-0 border-0 border-b shadow-none rounded-none pb-4">
         <Link
           href={`/blog/${slugAsParams}`}
           className="rounded-md el-focus-styles inline-block group"

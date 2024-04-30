@@ -14,7 +14,7 @@ const Tags = ({tags}: {tags: string[]}) => {
 
 export default Tags
 
-export const Tag = ({tag}: {tag: string}) => {
+export const Tag = ({tag, count}: {tag: string; count?: number}) => {
   return (
     <li key={tag} role="listitem" className="inline-block">
       <Link
@@ -25,7 +25,7 @@ export const Tag = ({tag}: {tag: string}) => {
         href={`/tags/${slug(tag)}`}
         aria-label={`Explore tag ${tag}`}
       >
-        #{tag}
+        #{tag} {count && `(${count})`}
       </Link>
     </li>
   )

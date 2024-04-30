@@ -16,7 +16,10 @@ const CustomLink = (
 
   const linkVariant = buttonVariants({
     variant: 'link',
-    className: cn('!p-0 h-full !inline-block text-md', props.className),
+    className: cn(
+      '!p-0 h-full !inline-block !text-base !text-ring',
+      props.className,
+    ),
   })
 
   if (isInternalLink) {
