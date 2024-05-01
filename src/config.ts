@@ -7,7 +7,7 @@ const config = {
   HTML, CSS, JavaScript, and React. I create pixel-perfect, cross-browser
   interfaces with optimal performance`,
 
-  domainName: 'personal-website-phi-five.vercel.app',
+  domainName: 'personal-website-black-eta.vercel.app',
 
   colors: {
     theme: 'dark',
