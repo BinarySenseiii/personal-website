@@ -1,6 +1,6 @@
 import {posts} from '#site/content'
+import AboutSection from '~/components/about-section'
 import {PostList} from '~/components/post'
-import {AboutSection} from '~/components/sections/home'
 import Skills from '~/components/skills'
 import {sortPosts} from '~/lib/utils'
 
@@ -9,9 +9,9 @@ const HomePage = () => {
   return (
     <>
       <AboutSection />
-      <main id="main-content">
-        <PostList posts={sortedPosts} showRss />
-      </main>
+
+      <PostList posts={sortedPosts} showRss />
+
       <Skills />
     </>
   )

@@ -1,8 +1,8 @@
 'use client'
 import {useTheme} from 'next-themes'
-import NextTopLoader from 'nextjs-toploader'
 import React from 'react'
 import {useIsClient} from '@uidotdev/usehooks'
+import {AppProgressBar as ProgressBar} from 'next-nprogress-bar'
 
 const TopLoader = () => {
   const {theme} = useTheme()
@@ -10,9 +10,10 @@ const TopLoader = () => {
 
   return (
     isClient && (
-      <NextTopLoader
-        height={4}
+      <ProgressBar
+        height="4px"
         color={theme === 'light' ? '#c2007e' : '#00adb5'}
+        shallowRouting
       />
     )
   )
