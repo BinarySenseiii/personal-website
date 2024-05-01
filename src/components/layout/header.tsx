@@ -3,36 +3,41 @@ import Link from 'next/link'
 import config from '~/config'
 import Socials from '../socials'
 import ThemeToggle from '../theme-toggle'
+import {Fragment} from 'react'
+import SkipContent from '../ui/skip-content'
 
 const Header = () => {
   return (
-    <header className="mt-2 mb-4 sm:my-4 gap-4 flex sm:items-center justify-between flex-wrap">
-      <Link
-        href="/"
-        role="link"
-        aria-label="Home"
-        className="el-focus-styles rounded-md"
-      >
-        <div className="flex items-center text-left gap-4">
-          <Image
-            src="/images/personal.webp"
-            alt="Faisal TariQ photo"
-            height={100}
-            width={100}
-            className="rounded-full object-cover size-16"
-            priority
-          />
-          <div className="space-y-0">
-            <h1 className="font-bold text-xl">{config.appName}</h1>
-            <h2 className="font-normal">{config.appDesignation}</h2>
+    <Fragment>
+      <SkipContent />
+      <header className="mt-2 mb-4 sm:my-4 gap-4 flex sm:items-center justify-between flex-wrap">
+        <Link
+          href="/"
+          role="link"
+          aria-label="Home"
+          className="el-focus-styles rounded-md"
+        >
+          <div className="flex items-center text-left gap-4">
+            <Image
+              src="/images/personal.webp"
+              alt="Faisal TariQ photo"
+              height={100}
+              width={100}
+              className="rounded-full object-cover size-16"
+              priority
+            />
+            <div className="space-y-0">
+              <h1 className="font-bold text-xl">{config.appName}</h1>
+              <h2 className="font-normal">{config.appDesignation}</h2>
+            </div>
           </div>
+        </Link>
+        <div className="flex items-center gap-2">
+          <Socials />
+          <ThemeToggle />
         </div>
-      </Link>
-      <div className="flex items-center gap-2">
-        <Socials />
-        <ThemeToggle />
-      </div>
-    </header>
+      </header>
+    </Fragment>
   )
 }
 
