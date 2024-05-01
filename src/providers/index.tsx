@@ -4,10 +4,12 @@ import ScrollProgress from '~/components/scroll-progress'
 import {TooltipProvider} from '~/components/ui/tooltip'
 import ThemeProvider from './theme-provider'
 import TopLoader from '~/components/ui/top-loader'
+import SkipContent from '~/components/ui/skip-content'
 
 const RootProviders = ({children}: {children: ReactNode}) => {
   return (
     <ThemeProvider>
+      <SkipContent />
       <ScrollProgress />
       <TopLoader />
       <TooltipProvider>{children}</TooltipProvider>

@@ -20,15 +20,18 @@ const PostItem: React.FC<Post> = ({
       <Card className="p-0 border-0 border-b shadow-none rounded-none pb-4">
         <Link
           href={`/blog/${slugAsParams}`}
-          className="rounded-md el-focus-styles inline-block group"
+          className="rounded-md el-focus-styles inline-block group w-full"
         >
-          <PostMetadata
-            title={title}
-            description={description}
-            metadata={metadata}
-            date={date}
-          />
+          <PostMetadata title={title} metadata={metadata} date={date} />
         </Link>
+
+        <p
+          className={
+            'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'
+          }
+        >
+          {description}
+        </p>
 
         <CardContent className="p-0">
           <Tags tags={tags} />

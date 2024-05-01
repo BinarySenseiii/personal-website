@@ -15,7 +15,6 @@ const TOC_STYLES: ClassValue =
 const PostTableOfContent = ({toc}: {toc: Post['toc']}) => {
   const [tocValue, setTocValue] = useState('')
 
-  // Recursive function to render TOC items
   const renderTocItems = (items: Post['toc']) => {
     return (
       <ol role="list" className="space-y-2 list-disc mt-2 ps-4">

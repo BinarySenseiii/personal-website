@@ -7,11 +7,13 @@ import {sortPosts} from '~/lib/utils'
 const HomePage = () => {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
   return (
-    <main id="#main-content">
+    <>
       <AboutSection />
-      <PostList posts={sortedPosts} showRss />
+      <main id="main-content">
+        <PostList posts={sortedPosts} showRss />
+      </main>
       <Skills />
-    </main>
+    </>
   )
 }
 

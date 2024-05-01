@@ -34,9 +34,7 @@ export default function RootLayout({
         )}
       >
         {renderSchemaTags()}
-        <a href="#main-content" className="sr-only">
-          Skip to main content
-        </a>
+
         <RootProviders>{children}</RootProviders>
       </body>
     </html>

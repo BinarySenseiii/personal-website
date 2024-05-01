@@ -7,14 +7,12 @@ interface PostMetaProps {
   title: string
   date: string
   metadata: Post['metadata']
-  description: string | undefined
   isDetailPage?: boolean
 }
 const PostMetadata: React.FC<PostMetaProps> = ({
   title,
   date,
   metadata,
-  description,
   isDetailPage,
 }) => {
   return (
@@ -92,17 +90,6 @@ const PostMetadata: React.FC<PostMetaProps> = ({
           </dl>
         </div>
       </div>
-
-      <p
-        className={cn(
-          'text-muted-foreground text-sm line-clamp-2 font-ubuntu',
-          {
-            'line-clamp-none text-base hidden': isDetailPage,
-          },
-        )}
-      >
-        {description}
-      </p>
     </hgroup>
   )
 }

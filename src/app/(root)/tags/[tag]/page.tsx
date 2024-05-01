@@ -3,6 +3,7 @@ import {slug} from 'github-slugger'
 import React, {Fragment} from 'react'
 import {CustomLink} from '~/components/mdx'
 import {PostList} from '~/components/post'
+import SkipContent from '~/components/ui/skip-content'
 import config from '~/config'
 import {getSEOTags} from '~/lib/seo'
 import {getAllTags, getPostsByTagSlug} from '~/lib/utils'
@@ -45,7 +46,7 @@ const TagDetailPage: React.FC<TagPageProps> = ({params}) => {
 
       <PostList posts={displayPosts} showRss={false} />
 
-      <h3 className="mt-4 text-muted-foreground">
+      <h3 className="mt-4 text-muted-foreground" id="main-nav">
         Alternatively,{' '}
         <CustomLink href="/tags">choose from all tags</CustomLink> or{' '}
         <CustomLink href="/blog">view all posts</CustomLink>

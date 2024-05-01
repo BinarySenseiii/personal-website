@@ -67,13 +67,12 @@ export default async function BlogDetail({params}: BlogPostParams) {
       {/* SCHEMA JSON-LD MARKUP FOR GOOGLE */}
       <JsonSchemaLD post={post} />
 
-      <article id="main-content" className="w-full">
+      <article className="w-full">
         <BackButton>Back to Posts</BackButton>
         <div className="space-y-6 mb-6 mt-2">
           <PostMetadata
             isDetailPage
             title={post.title}
-            description={post.description}
             metadata={post.metadata}
             date={post.date}
           />
