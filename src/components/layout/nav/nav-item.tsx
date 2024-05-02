@@ -6,7 +6,7 @@ import {usePathname} from 'next/navigation'
 import {cn} from '~/lib/utils'
 import {motion} from 'framer-motion'
 
-const NavItem: React.FC<NavType[0]> = ({label, path, id}) => {
+const NavItem: React.FC<NavType[0]> = ({label, path}) => {
   const pathname = usePathname()
 
   return (
