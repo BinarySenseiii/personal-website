@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {annotate, annotationGroup} from 'rough-notation'
 import dubaiCon from '~/assets/images/f-dubai-police.webp'
 import {RoughAnnotationConfig, RoughAnnotationGroup} from 'rough-notation/lib/model'
-import {useMediaQuery} from '@uidotdev/usehooks'
+import {useMediaQuery} from '~/hooks'
 
 const annotationsConfig = [
   {ref: 'a1Ref', type: 'underline', color: 'white', multiline: true, iterations: 1},
@@ -15,7 +15,7 @@ const annotationsConfig = [
 ]
 
 const AboutSection = () => {
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 500px)')
+  const isSmallDevice = useMediaQuery('(max-width: 500px)')
   const hireRef = useRef<HTMLAnchorElement>(null)
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const annotationRefs = annotationsConfig.map(() => useRef<HTMLSpanElement>(null))
