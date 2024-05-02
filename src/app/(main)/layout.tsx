@@ -1,13 +1,13 @@
-import React, {ReactNode} from 'react'
-import Header from '~/components/layout/header'
-import Navbar from '~/components/layout/navbar'
+import {ReactNode} from 'react'
+import Navbar from '~/components/layout/nav'
+import SkipContent from '~/components/ui/skip-content'
 
 const Layout = ({children}: {children: ReactNode}) => {
   return (
-    <div className="space-y-4 container py-4 relative">
-      <Header />
-      <div className="pb-14">{children}</div>
+    <div className="space-y-4 container py-2 relative">
+      <SkipContent />
       <Navbar />
+      <div className="pb-8">{children}</div>
     </div>
   )
 }
