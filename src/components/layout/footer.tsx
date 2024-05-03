@@ -3,7 +3,7 @@ import {CustomLink} from '../mdx'
 
 const Footer = () => {
   return (
-    <footer className="py-4 !mt-auto flex items-center flex-col justify-center px-4 bg-neutral-900 rounded-md border  shadow-sm">
+    <footer className="py-4 !mt-auto flex items-center flex-col justify-center">
       <div className="flex items-center justify-center sm:justify-between gap-2 w-full flex-wrap text-center">
         <span>&copy; {new Date().getFullYear()} Design & Developed by ❤️</span>
 

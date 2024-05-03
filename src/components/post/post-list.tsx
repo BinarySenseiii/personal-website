@@ -16,7 +16,7 @@ const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
         <div className="flex items-center justify-between">
           <h2 className="font-bold font-ubuntu text-lg">Recent Publications</h2>
           <CustomLink href="/blog" aria-label="view all blogs">
-            Explore
+            View All
           </CustomLink>
         </div>
       )}

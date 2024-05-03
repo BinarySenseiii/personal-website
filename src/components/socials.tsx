@@ -41,7 +41,7 @@ const Socials = () => {
             <TooltipTrigger asChild>
               <CustomLink
                 href={social.href}
-                className="link-outline"
+                // className="link-outline"
                 aria-label={social.label}
               >
                 {social.icon}
