@@ -7,7 +7,6 @@ import PostMetadata from './post-metadata'
 import Tags from '../tags'
 
 const PostItem: React.FC<Post> = ({
-  slug,
   date,
   title,
   description,
@@ -16,7 +15,7 @@ const PostItem: React.FC<Post> = ({
   tags,
 }) => {
   return (
-    <li key={slug} role="listitem">
+    <li role="listitem">
       <Card className="p-0 border-0 border-b shadow-none rounded-none pb-4">
         <Link
           href={`/blog/${slugAsParams}`}
@@ -25,7 +24,11 @@ const PostItem: React.FC<Post> = ({
           <PostMetadata title={title} metadata={metadata} date={date} />
         </Link>
 
-        <p className={'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'}>
+        <p
+          className={
+            'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'
+          }
+        >
           {description}
         </p>
 
