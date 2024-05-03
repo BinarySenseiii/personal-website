@@ -42,7 +42,7 @@ const TagsPage = () => {
   const result: OrganizedPost = organizePostsByTag(posts)
 
   return (
-    <div className="grid md:grid-cols-3 gap-4 items-start">
+    <div className="grid md:grid-cols-3 gap-4 mt-8 items-start">
       <main id="main-content" className="md:col-span-2 order-2 md:order-1">
         <h3 className="mb-4 text-lg font-medium">Posts by Tag (A-Z)</h3>
 
@@ -52,19 +52,14 @@ const TagsPage = () => {
             aria-labelledby={`posts-by-tag ${tag}-title`}
             className="space-y-2 border-b last:border-none pb-4 mb-4"
           >
-            <h3
-              id={`${tag}-title`}
-              className="text-base font-medium capitalize"
-            >
+            <h3 id={`${tag}-title`} className="text-base font-medium capitalize">
               {tag}
             </h3>
 
             <ul role="list" className="space-y-1 sm:list-disc sm:list-inside">
               {result[tag].map((post, index) => (
                 <li key={index} className="sm:ps-2">
-                  <CustomLink href={`/blog/${post.slugAsParams}`}>
-                    {post.title}
-                  </CustomLink>
+                  <CustomLink href={`/blog/${post.slugAsParams}`}>{post.title}</CustomLink>
                 </li>
               ))}
             </ul>
@@ -72,7 +67,7 @@ const TagsPage = () => {
         ))}
       </main>
 
-      <div className="text-xl order-1 md:order-2 space-y-1 dark:bg-neutral-800/50 bg-slate-100 p-2 rounded-md sm:sticky top-4">
+      <div className="text-xl order-1 md:order-2 space-y-1 bg-neutral-800/50  p-2 rounded-md sm:sticky top-4">
         <h2 className="text-center uppercase">All Tags</h2>
         <ul role="list" className="flex flex-wrap gap-2 pb-1 justify-center">
           {sortedTags.map((tag, index) => (

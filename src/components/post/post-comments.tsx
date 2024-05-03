@@ -1,15 +1,11 @@
 'use client'
 import React from 'react'
 import Giscus from '@giscus/react'
-import {useTheme} from 'next-themes'
 
 const PostComments = () => {
-  const {theme} = useTheme()
-
   return (
     <div className="w-full mt-4">
       <Giscus
-        key={theme}
         id="comments"
         repo="BinarySenseiii/personal-website"
         repoId="R_kgDOLyFZyw"
@@ -20,7 +16,7 @@ const PostComments = () => {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
-        theme={theme === 'system' ? 'preferred_color_scheme' : theme}
+        theme="dark"
         lang="en"
         loading="lazy"
       />

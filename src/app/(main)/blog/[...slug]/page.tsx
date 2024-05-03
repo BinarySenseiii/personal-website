@@ -3,12 +3,7 @@ import Image from 'next/image'
 import {notFound} from 'next/navigation'
 import BackButton from '~/components/back-btn'
 import {MDXContent} from '~/components/mdx'
-import {
-  JsonSchemaLD,
-  PostComments,
-  PostMetadata,
-  TableOfContent,
-} from '~/components/post'
+import {JsonSchemaLD, PostComments, PostMetadata, TableOfContent} from '~/components/post'
 import Tags from '~/components/tags'
 import {getSEOTags} from '~/lib/seo'
 import {cn} from '~/lib/utils'
@@ -27,9 +22,7 @@ async function getPostFromParams(params: BlogPostParams['params']) {
   return typeof post === 'undefined' || !post.published ? notFound() : post
 }
 
-export async function generateStaticParams(): Promise<
-  BlogPostParams['params'][]
-> {
+export async function generateStaticParams(): Promise<BlogPostParams['params'][]> {
   return posts.map(post => ({slug: post.slugAsParams.split('/')}))
 }
 
@@ -70,12 +63,7 @@ export default async function BlogDetail({params}: BlogPostParams) {
       <article className="w-full">
         <BackButton>Back to Posts</BackButton>
         <div className="space-y-6 mb-6 mt-2">
-          <PostMetadata
-            isDetailPage
-            title={post.title}
-            metadata={post.metadata}
-            date={post.date}
-          />
+          <PostMetadata isDetailPage title={post.title} metadata={post.metadata} date={post.date} />
 
           <TableOfContent toc={post.toc} />
 
@@ -92,10 +80,7 @@ export default async function BlogDetail({params}: BlogPostParams) {
           </div>
         </div>
 
-        <main
-          id="main-content"
-          className={cn(`prose dark:prose-invert mdx-content  !w-full`)}
-        >
+        <main id="main-content" className={cn(`prose-invert mdx-content  !w-full`)}>
           <MDXContent code={post.body} />
         </main>
 

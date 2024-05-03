@@ -51,7 +51,7 @@ const AboutSection = () => {
     <section className="space-y-3 grid md:grid-cols-3 gap-4" aria-label="About">
       <div className="space-y-3 md:col-span-2">
         <h1 className="font-semibold text-lg sm:text-xl font-ubuntu">
-          Hi, I&apos;m Faisal, Frontend developer from the UAE
+          Hi, I&apos;m Faisal, Frontend developer from UAE
         </h1>
 
         <p className="text-muted-foreground">

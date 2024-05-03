@@ -29,7 +29,7 @@ const SkillsList = ({stacks}: {stacks: stacksProps}) => {
           <li
             role="listitem"
             key={index}
-            className="mr-2 flex w-max items-center gap-2 rounded-full border border-neutral-300 bg-neutral-50 px-3 py-2 text-[15px] shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50"
+            className="mr-2 flex w-max items-center gap-2 rounded-full border  px-3 py-2 text-[15px] shadow-sm border-neutral-800 bg-neutral-900 text-neutral-50"
           >
             {<Icon className={className} aria-label={stack} />}
             <span className="whitespace-nowrap">{stack}</span>

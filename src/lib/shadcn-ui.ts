@@ -4,32 +4,9 @@ import {fontFamily} from 'tailwindcss/defaultTheme'
 import type {Config} from 'tailwindcss'
 
 const shadcnPlugin = plugin(
-  // 1. add css variables definitions to the base layer
   function ({addBase}) {
     addBase({
       ':root': {
-        '--background': '0 0% 100%',
-        '--foreground': '240 10% 3.9%',
-        '--card': '0 0% 100%',
-        '--card-foreground': '240 10% 3.9%',
-        '--popover': '0 0% 100%',
-        '--popover-foreground': '240 10% 3.9%',
-        '--primary': '240 5.9% 10%',
-        '--primary-foreground': '0 0% 98%',
-        '--secondary': '240 4.8% 95.9%',
-        '--secondary-foreground': '240 5.9% 10%',
-        '--muted': '240 4.8% 95.9%',
-        '--muted-foreground': '240 3.8% 46.1%',
-        '--accent': '240 4.8% 95.9%',
-        '--accent-foreground': '240 5.9% 10%',
-        '--destructive': '0 84.2% 60.2%',
-        '--destructive-foreground': '0 0% 98%',
-        '--border': '240 5.9% 90%',
-        '--input': '240 5.9% 90%',
-        '--ring': '321, 100%, 38%',
-        '--radius': '0.5rem',
-      },
-      '.dark': {
         '--background': '240 10% 3.9%',
         '--foreground': '0 0% 98%',
         '--card': '240 10% 3.9%',
@@ -49,6 +26,7 @@ const shadcnPlugin = plugin(
         '--border': '240 3.7% 15.9%',
         '--input': '240 3.7% 15.9%',
         '--ring': '182.7 100.0% 35.5%',
+        '--radius': '0.5rem',
       },
     }),
       addBase({
@@ -61,14 +39,12 @@ const shadcnPlugin = plugin(
       })
   },
 
-  // 2. Extend the tailwind theme with utilities
   {
     theme: {
       container: {
         center: true,
         padding: '1rem',
         screens: {
-          // xl: '48rem',
           xl: '50rem',
         },
       },
@@ -76,7 +52,7 @@ const shadcnPlugin = plugin(
         typography: {
           DEFAULT: {
             css: {
-              maxWidth: '100ch', // add required value here
+              maxWidth: '100ch',
             },
           },
         },
@@ -150,7 +126,7 @@ const shadcnPlugin = plugin(
 
 export const shadcnPreset = {
   prefix: '',
-  darkMode: ['class'],
+  darkMode: ['selector'],
   content: [],
   plugins: [animatePlugin, shadcnPlugin],
 } satisfies Config

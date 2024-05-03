@@ -40,15 +40,14 @@ const TagDetailPage: React.FC<TagPageProps> = ({params}) => {
 
   return (
     <Fragment>
-      <h2 className="text-xl text-center mt-6 dark:bg-neutral-800/50 bg-slate-100 p-2 rounded-md">
+      <h2 className="text-xl text-center mt-6 bg-neutral-800/50  p-2 rounded-md">
         Tagged [ {title} ]
       </h2>
 
       <PostList posts={displayPosts} showRss={false} />
 
       <h3 className="mt-4 text-muted-foreground" id="main-nav">
-        Alternatively,{' '}
-        <CustomLink href="/tags">choose from all tags</CustomLink> or{' '}
+        Alternatively, <CustomLink href="/tags">choose from all tags</CustomLink> or{' '}
         <CustomLink href="/blog">view all posts</CustomLink>
       </h3>
     </Fragment>
