@@ -11,8 +11,10 @@ import {Textarea} from './ui/textarea'
 import {CustomLink} from './mdx'
 import config from '~/config'
 import Socials from './socials'
+import {useSendContactData} from '~/actions/mutations'
 
 const ContactUs = () => {
+  const {mutate, isPending} = useSendContactData()
   const form = useForm<contactSchemaType>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
@@ -24,13 +26,15 @@ const ContactUs = () => {
   })
 
   function onSubmit(data: contactSchemaType) {
-    console.log('data::: ', data)
+    mutate(data, {
+      onSuccess: () => form.reset(),
+    })
   }
 
   return (
     <section aria-label="contact" className="!mt-5">
-      <div className="flex flex-col md:flex-row w-full gap-4">
-        <div className="md:max-w-xs w-full  space-y-4">
+      <div className="flex items-center flex-col md:flex-row w-full gap-4">
+        <div className="md:max-w-xs size-full space-y-4">
           <h2 className={typo({variant: 'h2'})}>Get in Touch</h2>
           <p className="text-muted-foreground text-base">
             If you have any inquiries, please feel free to reach out. You can contact us
@@ -57,12 +61,7 @@ const ContactUs = () => {
                 render={({field}) => (
                   <FormItem>
                     <FormControl>
-                      <Input
-                        type="text"
-                        autoComplete="off"
-                        placeholder="Full Name"
-                        {...field}
-                      />
+                      <Input type="text" placeholder="Full Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -109,8 +108,13 @@ const ContactUs = () => {
               )}
             />
 
-            <Button type="submit" variant="secondary" className="w-full">
-              Submit
+            <Button
+              type="submit"
+              variant="secondary"
+              className="w-full"
+              disabled={isPending}
+            >
+              {isPending ? '...' : 'Submit'}
             </Button>
           </form>
         </Form>
