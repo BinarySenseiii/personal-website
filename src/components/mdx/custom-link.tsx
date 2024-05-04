@@ -31,13 +31,7 @@ const CustomLink = (
   }
 
   return (
-    <a
-      target="_blank"
-      rel="external"
-      className={linkVariant}
-      role="link"
-      {...props}
-    >
+    <a target="_blank" rel="external" className={linkVariant} role="link" {...props}>
       {props.children}
     </a>
   )

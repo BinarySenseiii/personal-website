@@ -3,6 +3,7 @@ import AboutSection from '~/components/about-section'
 import {PostList} from '~/components/post'
 import Skills from '~/components/skills'
 import {sortPosts} from '~/lib/utils'
+import ContactUs from '../../components/contact-us'
 
 const HomePage = () => {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
@@ -11,6 +12,7 @@ const HomePage = () => {
       <AboutSection />
       <Skills />
       <PostList posts={sortedPosts} showRss />
+      <ContactUs />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 import {CustomLink} from '../mdx'
 import PostItem from './post-item'
 import {Frown} from 'lucide-react'
+import {typo} from '../ui/typograpghy'
 
 type PostListProps = {
   posts: Post[]
@@ -11,16 +12,16 @@ type PostListProps = {
 
 const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
   return (
-    <section aria-label="Articles" className="space-y-4 mt-5" id="main-content">
+    <section aria-label="Articles" className="space-y-6 mt-5" id="main-content">
       {showRss && (
         <div className="flex items-center justify-between">
-          <h2 className="font-bold font-ubuntu text-lg">Most recent articles</h2>
+          <h2 className={typo({variant: 'h2'})}>Most recent articles</h2>
           <CustomLink href="/blog" aria-label="view all blogs">
             View All
           </CustomLink>
         </div>
       )}
-      <ol className="space-y-4" role="list">
+      <ol className="space-y-3" role="list">
         {posts.length > 0 ? (
           posts.splice(0, 3).map(post => <PostItem key={post.slug} {...post} />)
         ) : (

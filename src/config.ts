@@ -7,7 +7,7 @@ const config = {
   HTML, CSS, JavaScript, and React. I create pixel-perfect, cross-browser
   interfaces with optimal performance`,
 
-  domainName: 'personal-website-black-eta.vercel.app',
+  domainName: 'faisal-dev.vercel.app',
 
   colors: {
     theme: 'dark',
@@ -19,6 +19,7 @@ const config = {
     instagram: 'https://www.instagram.com/faisal_griz/',
     discord: 'https://discord.gg/cAbzWNQw',
     email: 'faisaltariq1812@gmail.com',
+    phone: '+971503506343',
   },
 
   auth: {

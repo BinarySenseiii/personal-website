@@ -15,8 +15,8 @@ const PostItem: React.FC<Post> = ({
   tags,
 }) => {
   return (
-    <li role="listitem">
-      <Card className="p-0 border-0 border-b shadow-none rounded-none pb-4">
+    <li role="listitem" className="last:!border-b-0 border-b pb-4 ">
+      <Card className="p-0 border-0  shadow-none rounded-none">
         <Link
           href={`/blog/${slugAsParams}`}
           className="rounded-md el-focus-styles inline-block group w-full"
@@ -24,11 +24,7 @@ const PostItem: React.FC<Post> = ({
           <PostMetadata title={title} metadata={metadata} date={date} />
         </Link>
 
-        <p
-          className={
-            'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'
-          }
-        >
+        <p className={'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'}>
           {description}
         </p>
 

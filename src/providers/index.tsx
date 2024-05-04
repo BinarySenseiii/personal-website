@@ -6,11 +6,11 @@ import TopLoader from '~/components/ui/top-loader'
 
 const RootProviders = ({children}: {children: ReactNode}) => {
   return (
-    <>
+    <TooltipProvider>
       <ScrollProgress />
       <TopLoader />
-      <TooltipProvider>{children}</TooltipProvider>
-    </>
+      {children}
+    </TooltipProvider>
   )
 }
 

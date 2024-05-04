@@ -1,9 +1,10 @@
+import {ClassValue} from 'clsx'
 import {Linkedin} from 'lucide-react'
 import {FaInstagram} from 'react-icons/fa6'
 import {FiGithub} from 'react-icons/fi'
 import {TbBrandDiscord} from 'react-icons/tb'
 import config from '~/config'
-import {CustomLink} from './mdx'
+import {cn} from '~/lib/utils'
 import {Tooltip, TooltipContent, TooltipTrigger} from './ui/tooltip'
 
 const socialsIcons = [
@@ -12,24 +13,29 @@ const socialsIcons = [
     label: 'Github',
     icon: <FiGithub className="size-[1.2rem]" />,
     href: config.social.github,
+    className: 'hover:bg-gray-400 hover:text-black' as ClassValue,
   },
   {
     id: 2,
     label: 'Linkedin',
     icon: <Linkedin className="size-[1.2rem]" />,
     href: config.social.linkedin,
+    className: 'hover:bg-blue-700 hover:text-white' as ClassValue,
   },
   {
     id: 3,
     label: 'Instagram',
     icon: <FaInstagram className="size-[1.2rem]" />,
     href: config.social.instagram,
+    className:
+      ' hover:bg-gradient-to-r from-rose-400 to-red-500 hover:text-white' as ClassValue,
   },
   {
     id: 4,
     label: 'Discord',
     icon: <TbBrandDiscord className="size-[1.2rem]" />,
     href: config.social.discord,
+    className: 'hover:bg-blue-400 hover:text-white' as ClassValue,
   },
 ]
 const Socials = () => {
@@ -39,13 +45,18 @@ const Socials = () => {
         <li key={social.id}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <CustomLink
+              <a
                 href={social.href}
-                // className="link-outline"
+                className={cn(
+                  'border border-input bg-background  hover:text-accent-foreground size-9  flex items-center justify-center rounded-md  ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-ring focus-visible:ring-offset-2',
+                  social.className,
+                )}
                 aria-label={social.label}
+                target="_blank"
+                rel="external"
               >
                 {social.icon}
-              </CustomLink>
+              </a>
             </TooltipTrigger>
             <TooltipContent side="bottom">
               <span>{social.label}</span>
