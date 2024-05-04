@@ -14,7 +14,7 @@ const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
     <section aria-label="Articles" className="space-y-4 mt-5" id="main-content">
       {showRss && (
         <div className="flex items-center justify-between">
-          <h2 className="font-bold font-ubuntu text-lg">Recent Publications</h2>
+          <h2 className="font-bold font-ubuntu text-lg">Most recent articles</h2>
           <CustomLink href="/blog" aria-label="view all blogs">
             View All
           </CustomLink>
@@ -24,10 +24,7 @@ const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
         {posts.length > 0 ? (
           posts.splice(0, 3).map(post => <PostItem key={post.slug} {...post} />)
         ) : (
-          <li
-            role="listitem"
-            className=" h-60 flex items-center justify-center"
-          >
+          <li role="listitem" className=" h-60 flex items-center justify-center">
             <div className="space-y-3  flex flex-col items-center">
               <Frown />
               <h2 className="text-lg">No Articles found</h2>

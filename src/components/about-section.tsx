@@ -8,10 +8,34 @@ import {RoughAnnotationConfig, RoughAnnotationGroup} from 'rough-notation/lib/mo
 import {useMediaQuery} from '~/hooks'
 
 const annotationsConfig = [
-  {ref: 'a1Ref', type: 'underline', color: 'white', multiline: true, iterations: 1},
-  {ref: 'a2Ref', type: 'underline', color: 'white', multiline: true, iterations: 1},
-  {ref: 'a3Ref', type: 'underline', color: 'white', multiline: true, iterations: 1},
-  {ref: 'a4Ref', type: 'underline', color: 'white', multiline: true, iterations: 1},
+  {
+    ref: 'a1Ref',
+    type: 'underline',
+    color: 'white',
+    multiline: true,
+    iterations: 1,
+  },
+  {
+    ref: 'a2Ref',
+    type: 'underline',
+    color: 'white',
+    multiline: true,
+    iterations: 1,
+  },
+  {
+    ref: 'a3Ref',
+    type: 'underline',
+    color: 'white',
+    multiline: true,
+    iterations: 1,
+  },
+  {
+    ref: 'a4Ref',
+    type: 'underline',
+    color: 'white',
+    multiline: true,
+    iterations: 1,
+  },
 ]
 
 const AboutSection = () => {
@@ -67,14 +91,14 @@ const AboutSection = () => {
         </p>
 
         <p className="text-muted-foreground">
-          I earned a Web Development degree from Cisco Networking Academy, where I honed both
-          technical expertise and a keen eye for design principles.
+          I earned a Web Development degree from Cisco Networking Academy, where I honed
+          both technical expertise and a keen eye for design principles.
         </p>
 
         <p className="text-muted-foreground">
-          Through these experiences, I had the opportunity to work with both small and large,
-          specialized and cross-function teams across different time zones and developed a working
-          style that leans towards{' '}
+          Through these experiences, I had the opportunity to work with both small and
+          large, specialized and cross-function teams across different time zones and
+          developed a working style that leans towards{' '}
           <span ref={annotationRefs[2]} className="text-white">
             flexibility, clarity
           </span>{' '}

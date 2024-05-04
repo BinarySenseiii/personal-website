@@ -8,13 +8,13 @@ export const navData = [
   },
   {
     id: createId(),
-    label: 'Blog',
-    path: '/blog',
+    label: 'Projects',
+    path: '/projects',
   },
   {
     id: createId(),
-    label: 'Projects',
-    path: '/projects',
+    label: 'Blog',
+    path: '/blog',
   },
 
   {
