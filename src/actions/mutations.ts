@@ -10,6 +10,7 @@ const ORIGIN =
     ? 'http://localhost:3000'
     : `https://${config.domainName}`
 
+
 export async function sendDataToGoogleSheets(data: contactSchemaType): Promise<void> {
   const requestOptions = {
     method: 'POST',

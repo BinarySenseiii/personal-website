@@ -1,17 +1,16 @@
 'use client'
-import React from 'react'
-import {typo} from './ui/typograpghy'
-import {Form, FormControl, FormField, FormItem, FormMessage} from '~/components/ui/form'
-import {contactSchemaType, ContactSchema} from '~/schema'
-import {useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm} from 'react-hook-form'
+import {useSendContactData} from '~/actions/mutations'
+import {Form, FormControl, FormField, FormItem, FormMessage} from '~/components/ui/form'
+import config from '~/config'
+import {ContactSchema, contactSchemaType} from '~/schema'
+import {CustomLink} from './mdx'
+import Socials from './socials'
 import {Button} from './ui/button'
 import {Input} from './ui/input'
 import {Textarea} from './ui/textarea'
-import {CustomLink} from './mdx'
-import config from '~/config'
-import Socials from './socials'
-import {useSendContactData} from '~/actions/mutations'
+import {typo} from './ui/typograpghy'
 
 const ContactUs = () => {
   const {mutate, isPending} = useSendContactData()
@@ -114,7 +113,7 @@ const ContactUs = () => {
               className="w-full"
               disabled={isPending}
             >
-              {isPending ? '...' : 'Submit'}
+              {isPending ? 'Please wait...' : 'Submit'}
             </Button>
           </form>
         </Form>

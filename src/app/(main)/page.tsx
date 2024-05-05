@@ -4,6 +4,7 @@ import {PostList} from '~/components/post'
 import Skills from '~/components/skills'
 import {sortPosts} from '~/lib/utils'
 import ContactUs from '../../components/contact-us'
+import {ProjectList} from '~/components/project'
 
 const HomePage = () => {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
@@ -11,6 +12,7 @@ const HomePage = () => {
     <div className="!mt-8 space-y-12">
       <AboutSection />
       <Skills />
+      <ProjectList />
       <PostList posts={sortedPosts} showRss />
       <ContactUs />
     </div>

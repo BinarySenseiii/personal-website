@@ -12,7 +12,7 @@ type PostListProps = {
 
 const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
   return (
-    <section aria-label="Articles" className="space-y-6 mt-5" id="main-content">
+    <section aria-label="articles" className="space-y-6 mt-5">
       {showRss && (
         <div className="flex items-center justify-between">
           <h2 className={typo({variant: 'h2'})}>Most recent articles</h2>
