@@ -5,7 +5,7 @@ interface SVGRProps {
   titleId?: string
 }
 const ChainGpt = ({title, titleId, ...props}: SVGProps<SVGSVGElement> & SVGRProps) => (
-  <div className="size-16  bg-neutral-900 grid place-content-center rounded-md">
+  <div className="size-16 border bg-neutral-900 grid place-content-center rounded-md">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={40}

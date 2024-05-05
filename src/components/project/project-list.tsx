@@ -20,8 +20,8 @@ const ProjectList = () => {
         </p>
       </div>
 
-      <ul role="list" className="space-y-4">
-        {projects.map(project => (
+      <ul role="list" className="space-y-4 ">
+        {projects.slice(0, 3).map(project => (
           <ProjectItem key={project.id} {...project} />
         ))}
       </ul>
