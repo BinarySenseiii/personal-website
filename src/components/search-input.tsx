@@ -1,32 +1,30 @@
 'use client'
-import React, {useCallback, useEffect, useState} from 'react'
 import {Search} from 'lucide-react'
-import {Input} from '~/components/ui/input'
-import {useRouter} from 'next/navigation'
+import {usePathname, useRouter} from 'next/navigation'
+import React, {useEffect, useState} from 'react'
 import {useDebounce} from 'use-debounce'
+import {Input} from '~/components/ui/input'
 
-const PostSearch = () => {
+const SearchInput = () => {
   const router = useRouter()
   const [search, setSearch] = useState('')
   const [debouncedSearch] = useDebounce(search, 1000)
+  const currentPath = usePathname()
 
-  const onChangeHandle = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSearch(e.target.value.toLowerCase())
-    },
-    [],
-  )
+  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value.toLowerCase())
+  }
 
   useEffect(() => {
     if (!debouncedSearch) {
-      router.push(`/blog`)
+      router.push(currentPath)
     } else {
-      router.push(`/blog?query=${encodeURIComponent(debouncedSearch)}`)
+      router.push(`${currentPath}?query=${encodeURIComponent(debouncedSearch)}`)
     }
-  }, [debouncedSearch, router])
+  }, [currentPath, debouncedSearch, router])
 
   return (
-    <div className="relative  sm:max-w-xs w-full">
+    <div className="relative sm:max-w-xs w-full">
       <Search className="absolute left-2 top-2/4 -translate-y-2/4 size-4 text-muted-foreground" />
       <Input
         type="search"
@@ -39,4 +37,4 @@ const PostSearch = () => {
   )
 }
 
-export default PostSearch
+export default SearchInput

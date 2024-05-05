@@ -4,6 +4,7 @@ import {CustomLink} from '../mdx'
 import PostItem from './post-item'
 import {Frown} from 'lucide-react'
 import {typo} from '../ui/typograpghy'
+import ContentNotFound from '../ui/content-not-found'
 
 type PostListProps = {
   posts: Post[]
@@ -25,12 +26,7 @@ const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
         {posts.length > 0 ? (
           posts.splice(0, 3).map(post => <PostItem key={post.slug} {...post} />)
         ) : (
-          <li role="listitem" className=" h-60 flex items-center justify-center">
-            <div className="space-y-3  flex flex-col items-center">
-              <Frown />
-              <h2 className="text-lg">No Articles found</h2>
-            </div>
-          </li>
+          <ContentNotFound text="No Articles Found" />
         )}
       </ol>
     </section>

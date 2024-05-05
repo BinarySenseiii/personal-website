@@ -6,7 +6,7 @@ import {typo} from './ui/typograpghy'
 const Skills = () => {
   return (
     <section aria-label="skills" className="my-4 space-y-6 bg-background">
-      <h2 className={typo({variant: 'h2'})}>Tools That I Have Used</h2>
+      <h2 className={typo({variant: 'h2'})}>Tools that i have used</h2>
       <Marquee autoFill pauseOnHover>
         <SkillsList stacks={FRONTEND_STACKS} />
       </Marquee>

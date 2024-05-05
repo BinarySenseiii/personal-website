@@ -32,6 +32,3 @@ const projects = [
 
 export default projects
 export type TProject = (typeof projects)[0]
-
-// NOCODE_API_KEY="MRPzlTgmNGLYKjzb"
-// NOCODE_TAB_ID="Sheet1"

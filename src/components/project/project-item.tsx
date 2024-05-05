@@ -19,7 +19,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     >
       <CustomLink
         href={deployedURL}
-        className="flex items-center gap-4 group el-focus-styles rounded-md"
+        className="flex flex-col sm:flex-row sm:items-center gap-4 group el-focus-styles rounded-md"
       >
         <div className="flex-shrink-0">
           <Icon />
