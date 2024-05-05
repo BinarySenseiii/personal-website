@@ -39,8 +39,8 @@ const TagDetailPage: React.FC<TagPageProps> = ({params}) => {
   const displayPosts = getPostsByTagSlug(posts, tag)
 
   return (
-    <Fragment>
-      <h2 className="text-xl text-center mt-6 bg-neutral-800/50  p-2 rounded-md">
+    <div className="!mt-8">
+      <h2 className="text-xl text-center bg-neutral-800/50  p-2 rounded-md">
         Tagged [ {title} ]
       </h2>
 
@@ -50,7 +50,7 @@ const TagDetailPage: React.FC<TagPageProps> = ({params}) => {
         Alternatively, <CustomLink href="/tags">choose from all tags</CustomLink> or{' '}
         <CustomLink href="/blog">view all posts</CustomLink>
       </h3>
-    </Fragment>
+    </div>
   )
 }
 

@@ -42,7 +42,7 @@ const TagsPage = () => {
   const result: OrganizedPost = organizePostsByTag(posts)
 
   return (
-    <div className="grid md:grid-cols-3 gap-4 mt-8 items-start">
+    <div className="grid md:grid-cols-3 gap-4 !mt-8 items-start">
       <main id="main-content" className="md:col-span-2 order-2 md:order-1">
         <h3 className="mb-4 text-lg font-medium">Posts by Tag (A-Z)</h3>
 
@@ -59,7 +59,9 @@ const TagsPage = () => {
             <ul role="list" className="space-y-1 sm:list-disc sm:list-inside">
               {result[tag].map((post, index) => (
                 <li key={index} className="sm:ps-2">
-                  <CustomLink href={`/blog/${post.slugAsParams}`}>{post.title}</CustomLink>
+                  <CustomLink href={`/blog/${post.slugAsParams}`}>
+                    {post.title}
+                  </CustomLink>
                 </li>
               ))}
             </ul>

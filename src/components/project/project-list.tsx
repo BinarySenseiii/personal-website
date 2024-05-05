@@ -30,9 +30,7 @@ const ProjectList = ({
 
       <ol className="space-y-4" role="list">
         {projects.length > 0 ? (
-          projects
-            .slice(0, 3)
-            .map(project => <ProjectItem key={project.id} {...project} />)
+          projects.map(project => <ProjectItem key={project.id} {...project} />)
         ) : (
           <ContentNotFound text="No Projects Found" />
         )}

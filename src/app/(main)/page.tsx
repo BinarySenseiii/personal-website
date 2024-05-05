@@ -12,8 +12,8 @@ const HomePage = () => {
     <div className="!mt-8 space-y-12">
       <AboutSection />
       <Skills />
-      <ProjectList projects={projects} metadata />
-      <PostList posts={sortedPosts} showRss />
+      <ProjectList projects={projects.slice(0, 3)} metadata />
+      <PostList posts={sortedPosts.slice(0, 3)} showRss />
       <ContactUs />
     </div>
   )

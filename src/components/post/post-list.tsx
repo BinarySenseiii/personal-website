@@ -24,7 +24,7 @@ const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
       )}
       <ol className="space-y-3" role="list">
         {posts.length > 0 ? (
-          posts.splice(0, 3).map(post => <PostItem key={post.slug} {...post} />)
+          posts.map(post => <PostItem key={post.slug} {...post} />)
         ) : (
           <ContentNotFound text="No Articles Found" />
         )}
