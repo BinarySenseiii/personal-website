@@ -5,7 +5,7 @@ import { useIncrementViewCount } from '~/actions/mutations'
 import { usePostViews } from '~/actions/queries'
 
 const PostViews = ({ slug }: { slug: string }) => {
-  const { data, isLoading, isFetching } = usePostViews(slug)
+  const { data, isLoading } = usePostViews(slug)
   const incrCount = useIncrementViewCount()
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const PostViews = ({ slug }: { slug: string }) => {
       <dt className="sr-only">Blog Post views</dt>
       <dd className="flex items-center text-muted-foreground text-sm gap-1">
         <Eye className="size-4" aria-hidden="true" />
-        <span>{isLoading || isFetching ? '...' : data?.views?.count ?? 0} Views</span>
+        <span>{isLoading ? '...' : data?.views?.count ?? 0} Views</span>
       </dd>
     </dl>
   )
