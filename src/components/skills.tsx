@@ -1,26 +1,28 @@
 'use client'
 import Marquee from 'react-fast-marquee'
-import {BACKEND_STACKS, FRONTEND_STACKS, stacksProps} from '~/constants/stack'
-import {typo} from './ui/typograpghy'
+import { BACKEND_STACKS, FRONTEND_STACKS, stacksProps } from '~/constants/stack'
+import { typo } from './ui/typograpghy'
 
 const Skills = () => {
   return (
-    <section aria-label="skills" className="my-4 space-y-6 bg-background">
-      <h2 className={typo({variant: 'h2'})}>Tools that i have used</h2>
-      <Marquee autoFill pauseOnHover>
-        <SkillsList stacks={FRONTEND_STACKS} />
-      </Marquee>
+    <section aria-label="skills" className="my-4 space-y-8 bg-background">
+      <h2 className={typo({ variant: 'h2' })}>Tools that i have used</h2>
+      <div className="space-y-6 w-full">
+        <Marquee autoFill pauseOnHover>
+          <SkillsList stacks={FRONTEND_STACKS} />
+        </Marquee>
 
-      <Marquee autoFill pauseOnHover direction="right">
-        <SkillsList stacks={BACKEND_STACKS} />
-      </Marquee>
+        <Marquee autoFill pauseOnHover direction="right">
+          <SkillsList stacks={BACKEND_STACKS} />
+        </Marquee>
+      </div>
     </section>
   )
 }
 
 export default Skills
 
-const SkillsList = ({stacks}: {stacks: stacksProps}) => {
+const SkillsList = ({ stacks }: { stacks: stacksProps }) => {
   return (
     <ul className="flex items-center" role="list">
       {Object.keys(stacks).map((stack, index) => {

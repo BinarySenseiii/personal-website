@@ -1,6 +1,6 @@
-import {createId} from '@paralleldrive/cuid2'
-import {ChainGpt, LumaIcon} from '~/assets/svg'
-import {MintKuto, NftConnect, PodPortal, PowerUp, worldRank} from './project-icons'
+import { createId } from '@paralleldrive/cuid2'
+import { ChainGpt, LumaIcon } from '~/assets/svg'
+import { MintKuto, NftConnect, PodPortal, PowerUp, worldRank } from './project-icons'
 
 const projects = [
   {
@@ -15,7 +15,7 @@ const projects = [
   {
     id: createId(),
     Icon: ChainGpt,
-    title: `ChainGPT - Unleash The Power of Blockchain AI`,
+    title: `ChainGPT -  The Power of Blockchain AI`,
     description:
       'The premiere AI-powered dashboard for Web3. Featuring advanced Crypto AI tools for traders, NFT creators, developers, and the crypto community.',
     deployedURL: 'https://app.chaingpt.org/',
