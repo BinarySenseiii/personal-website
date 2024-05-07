@@ -10,7 +10,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ Icon, title, description, dep
   return (
     <li
       role="listitem"
-      className="border-b bg-neutral-900 sm:bg-transparent p-3 sm:p-0 last:border-b-0 sm:pb-4 last:pb-0 rounded-md  sm:rounded-none"
+      className="border-b bg-neutral-900 sm:bg-transparent p-3 sm:p-0 last:border-b-0 sm:pb-4 last:sm:pb-0 rounded-md  sm:rounded-none"
     >
       <CustomLink
         href={deployedURL}
