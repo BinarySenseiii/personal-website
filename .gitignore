@@ -6,6 +6,14 @@
 .pnp.js
 .yarn/install-state.gz
 
+
+/prisma/db.sql
+/prisma/db.sqlite-journal
+.prisma
+javascript/**/migrations/
+typescript/**/migrations/
+/prisma/migrations
+
 # testing
 /coverage
 

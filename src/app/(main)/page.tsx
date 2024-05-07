@@ -1,10 +1,10 @@
-import {posts} from '#site/content'
+import { posts } from '#site/content'
 import AboutSection from '~/components/about-section'
-import {PostList} from '~/components/post'
+import { PostList } from '~/components/post'
+import { ProjectList, projects } from '~/components/project'
 import Skills from '~/components/skills'
-import {sortPosts} from '~/lib/utils'
+import { sortPosts } from '~/lib/utils'
 import ContactUs from '../../components/contact-us'
-import {ProjectList, projects} from '~/components/project'
 
 const HomePage = () => {
   const sortedPosts = sortPosts(posts.filter(post => post.published))
