@@ -54,7 +54,7 @@ const ContactUs = () => {
             className="bg-[#131313] p-3 rounded-md sm:rounded-none sm:p-0 sm:bg-transparent space-y-3 sm:space-y-4 w-full"
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <h2 className="text-center text-lg font-ubuntu">Fill this form</h2>
+            <h2 className="text-center text-lg font-ubuntu block sm:hidden">Fill this form</h2>
             <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
               <FormField
                 control={form.control}
