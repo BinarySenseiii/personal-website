@@ -8,15 +8,6 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-model Guestbook {
-  id         String   @id @default(uuid())
-  email      String
-  body       String
-  created_by String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-}
-
 model Views {
   slug  String @id
   count Int    @default(0)

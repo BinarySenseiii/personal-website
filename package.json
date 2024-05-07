@@ -18,6 +18,7 @@
     "@paralleldrive/cuid2": "^2.2.2",
     "@prisma/client": "^5.13.0",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",

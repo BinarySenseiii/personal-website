@@ -1,4 +1,4 @@
-import {createId} from '@paralleldrive/cuid2'
+import { createId } from '@paralleldrive/cuid2'
 
 export const navData = [
   {
@@ -17,11 +17,11 @@ export const navData = [
     path: '/blog',
   },
 
-  {
-    id: createId(),
-    label: 'Guests',
-    path: '/guests',
-  },
+  // {
+  //   id: createId(),
+  //   label: 'Guests',
+  //   path: '/guests',
+  // },
 ]
 
 export type NavType = typeof navData
