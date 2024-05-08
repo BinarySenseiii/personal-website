@@ -1,5 +1,5 @@
-import {cva, type VariantProps} from 'class-variance-authority'
-import {cn} from '~/lib/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '~/lib/utils'
 
 const typography = cva(['font-bold inline-block font-ubuntu'], {
   variants: {
@@ -9,6 +9,11 @@ const typography = cva(['font-bold inline-block font-ubuntu'], {
     },
     size: {
       sm: 'text-sm',
+    },
+    font: {
+      sans: 'font-sans',
+      dank: 'font-dank',
+      ubuntu: 'font-ubuntu',
     },
   },
   defaultVariants: {

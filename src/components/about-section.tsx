@@ -1,11 +1,13 @@
 'use client'
-import React, {useEffect, useRef} from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import {annotate, annotationGroup} from 'rough-notation'
-import dubaiCon from '~/assets/images/f-dubai-police.webp'
-import {RoughAnnotationConfig, RoughAnnotationGroup} from 'rough-notation/lib/model'
-import {useMediaQuery} from '~/hooks'
+import { useEffect, useRef } from 'react'
+import { annotate, annotationGroup } from 'rough-notation'
+import { RoughAnnotationConfig, RoughAnnotationGroup } from 'rough-notation/lib/model'
+
+import config from '~/config'
+import { useMediaQuery } from '~/hooks'
+import { cn } from '~/lib/utils'
+import CardStackDemo from './profile-stack'
+import { typo } from './ui/typograpghy'
 
 const annotationsConfig = [
   {
@@ -46,7 +48,7 @@ const AboutSection = () => {
 
   useEffect(() => {
     const annotations = annotationsConfig.map((config, index) => {
-      const {ref, ...options} = config
+      const { ref, ...options } = config
       return annotate(annotationRefs[index]!.current!, options as RoughAnnotationConfig)
     })
 
@@ -73,12 +75,12 @@ const AboutSection = () => {
 
   return (
     <section className="space-y-3 grid md:grid-cols-3 gap-4" aria-label="About">
-      <div className="space-y-3 md:col-span-2">
+      <div className="space-y-3 sm:col-span-2">
         <h1 className="font-semibold text-lg sm:text-xl font-ubuntu">
           Hi, I&apos;m Faisal, Frontend developer from UAE
         </h1>
 
-        <p className="text-muted-foreground">
+        <p className={typo({ variant: 'paragraph', font: 'sans' })}>
           I Love building tools that are{' '}
           <span ref={annotationRefs[0]} className="text-white">
             user friendly, simple
@@ -90,15 +92,15 @@ const AboutSection = () => {
           .
         </p>
 
-        <p className="text-muted-foreground">
-          I earned a Web Development degree from Cisco Networking Academy, where I honed
-          both technical expertise and a keen eye for design principles.
+        <p className={typo({ variant: 'paragraph', font: 'sans' })}>
+          I got a Web Development degree from Cisco Networking Academy. It helped me get better at
+          tech stuff and design.
         </p>
 
-        <p className="text-muted-foreground">
-          Through these experiences, I had the opportunity to work with both small and
-          large, specialized and cross-function teams across different time zones and
-          developed a working style that leans towards{' '}
+        <p className={typo({ variant: 'paragraph', font: 'sans' })}>
+          Through these experiences, I had the opportunity to work with both small and large
+          companies, as well as specialized and cross-functional teams across different time zones &
+          developed a working style that prioritizes{' '}
           <span ref={annotationRefs[2]} className="text-white">
             flexibility, clarity
           </span>{' '}
@@ -108,25 +110,22 @@ const AboutSection = () => {
           </span>
         </p>
 
-        <p className="text-muted-foreground">
+        <p className={cn(typo({ variant: 'paragraph', font: 'sans' }), '!mt-6')}>
           I&apos;m currently looking for a new role as a developer.{' '}
-          <Link
+          <a
             ref={hireRef}
-            href="/contact"
+            href={`mailto:${config.social.email}`}
             aria-label="Hire me"
             className="text-ring el-focus-styles"
           >
             Hire me?
-          </Link>
+          </a>
         </p>
       </div>
-      <Image
-        alt="Me standing on stage at Dubai police station delivering the presentation"
-        src={dubaiCon}
-        priority
-        className="rounded-md h-full hidden md:block object-cover !m-0"
-        placeholder="blur"
-      />
+
+      <div className="hidden sm:block relative h-full pt-4">
+        <CardStackDemo />
+      </div>
     </section>
   )
 }
