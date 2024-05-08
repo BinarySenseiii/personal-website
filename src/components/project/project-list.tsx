@@ -10,9 +10,9 @@ const ProjectList = ({ projects, metadata }: { projects: TProject[]; metadata?: 
     <section aria-label="projects" className="space-y-6 mt-5" id="main-content">
       {metadata && (
         <div className="flex items-center justify-between">
-          <h2 className={typo({ variant: 'h2' })}>Projects i&apos;ve worked on</h2>
+          <h2 className={typo({ variant: 'h2' })}>Featured Projects</h2>
           <CustomLink href="/projects" aria-label="view all projects">
-            View All
+            <span className="font-sans">view all projects</span>
           </CustomLink>
         </div>
       )}

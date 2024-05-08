@@ -1,5 +1,5 @@
 import config from '~/config'
-import {CustomLink} from '../mdx'
+import { CustomLink } from '../mdx'
 
 const Footer = () => {
   return (
@@ -10,12 +10,12 @@ const Footer = () => {
         <ul role="list" className="flex items-center gap-2">
           <li role="listitem">
             <CustomLink aria-label="visit rss feed" href={`https://${config.domainName}/feed.xml`}>
-              RSS Feed
+              RSS FEED
             </CustomLink>
           </li>
           <span> / </span>
           <li role="listitem">
-            <CustomLink href="/privacy">Privacy Policy</CustomLink>
+            <CustomLink href={`https://${config.domainName}/sitemap.xml`}>SITE MAP</CustomLink>
           </li>
         </ul>
       </div>

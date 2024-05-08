@@ -6,8 +6,9 @@ import { RoughAnnotationConfig, RoughAnnotationGroup } from 'rough-notation/lib/
 import config from '~/config'
 import { useMediaQuery } from '~/hooks'
 import { cn } from '~/lib/utils'
-import CardStackDemo from './profile-stack'
 import { typo } from './ui/typograpghy'
+import Image from 'next/image'
+import dubaiCon from '~/assets/images/f-dubai-police.webp'
 
 const annotationsConfig = [
   {
@@ -110,7 +111,7 @@ const AboutSection = () => {
           </span>
         </p>
 
-        <p className={cn(typo({ variant: 'paragraph', font: 'sans' }), '!mt-6')}>
+        <p className={cn(typo({ variant: 'paragraph', font: 'sans' }), 'sm:!mt-6')}>
           I&apos;m currently looking for a new role as a developer.{' '}
           <a
             ref={hireRef}
@@ -123,9 +124,13 @@ const AboutSection = () => {
         </p>
       </div>
 
-      <div className="hidden sm:block relative h-full pt-4">
-        <CardStackDemo />
-      </div>
+      <Image
+        alt="Speaking on stage at Dubai police station during a presentation"
+        src={dubaiCon}
+        placeholder="blur"
+        className="rounded-md shadow-md hidden sm:block"
+        priority
+      />
     </section>
   )
 }

@@ -1,9 +1,9 @@
-import {Post} from '#site/content'
+import { Post } from '#site/content'
 import React from 'react'
-import {CustomLink} from '../mdx'
+import { CustomLink } from '../mdx'
 import PostItem from './post-item'
-import {Frown} from 'lucide-react'
-import {typo} from '../ui/typograpghy'
+import { Frown } from 'lucide-react'
+import { typo } from '../ui/typograpghy'
 import ContentNotFound from '../ui/content-not-found'
 
 type PostListProps = {
@@ -11,14 +11,14 @@ type PostListProps = {
   showRss?: boolean
 }
 
-const PostList: React.FC<PostListProps> = ({posts, showRss}) => {
+const PostList: React.FC<PostListProps> = ({ posts, showRss }) => {
   return (
     <section aria-label="articles" className="space-y-6 mt-5">
       {showRss && (
         <div className="flex items-center justify-between">
-          <h2 className={typo({variant: 'h2'})}>Most recent articles</h2>
+          <h2 className={typo({ variant: 'h2' })}>Most recent posts</h2>
           <CustomLink href="/blog" aria-label="view all blogs">
-            View All
+            <span className="font-sans">view all posts</span>
           </CustomLink>
         </div>
       )}

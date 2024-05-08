@@ -37,7 +37,7 @@ export default function RootLayout({
         {renderSchemaTags()}
 
         <RootProviders>{children}</RootProviders>
-        <Analytics />
+        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
