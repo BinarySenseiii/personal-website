@@ -1,8 +1,9 @@
-import {dankMono, fontSans, ubuntu} from '~/components/ui/fonts'
-import {getSEOTags, renderSchemaTags} from '~/lib/seo'
-import {cn} from '~/lib/utils'
+import { dankMono, fontSans, ubuntu } from '~/components/ui/fonts'
+import { getSEOTags, renderSchemaTags } from '~/lib/seo'
+import { cn } from '~/lib/utils'
 import RootProviders from '~/providers'
 import '~/styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const viewport = {
   viewportFit: 'cover',
@@ -11,8 +12,8 @@ export const viewport = {
   maximumScale: 3,
   userScalable: true,
   themeColor: [
-    {media: '(prefers-color-scheme: light)', color: 'white'},
-    {media: '(prefers-color-scheme: dark)', color: 'black'},
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         {renderSchemaTags()}
 
         <RootProviders>{children}</RootProviders>
+        <Analytics />
       </body>
     </html>
   )
