@@ -77,7 +77,7 @@ const AboutSection = () => {
     <section className="space-y-3 grid md:grid-cols-3 gap-4" aria-label="About">
       <div className="space-y-3 sm:col-span-2">
         <h1 className="font-semibold text-lg sm:text-xl font-ubuntu">
-          Hi, I&apos;m Faisal, Frontend developer from UAE
+          Hello , I&apos;m Faisal, a Developer from the UAE.
         </h1>
 
         <p className={typo({ variant: 'paragraph', font: 'sans' })}>

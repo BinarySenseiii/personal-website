@@ -1,6 +1,6 @@
-import {posts} from '#site/content'
-import {MetadataRoute} from 'next'
-import {BasePath} from '~/lib/utils'
+import { posts } from '#site/content'
+import { MetadataRoute } from 'next'
+import { BasePath } from '~/lib/utils'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPosts = posts.map(post => ({
@@ -26,10 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: BasePath('/about'),
       lastModified: new Date(),
     },
-    {
-      url: BasePath('/contact'),
-      lastModified: new Date(),
-    },
+
     ...blogPosts,
   ]
 }
