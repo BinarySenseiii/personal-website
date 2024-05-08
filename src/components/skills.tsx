@@ -6,13 +6,13 @@ import { typo } from './ui/typograpghy'
 const Skills = () => {
   return (
     <section aria-label="skills" className="my-4 space-y-8 bg-background">
-      <h2 className={typo({ variant: 'h2' })}>Tools that i have used</h2>
+      <h2 className={typo({ variant: 'h2' })}>Tools that I have used</h2>
       <div className="space-y-6 w-full">
-        <Marquee autoFill pauseOnHover>
+        <Marquee autoFill pauseOnHover speed={20}>
           <SkillsList stacks={FRONTEND_STACKS} />
         </Marquee>
 
-        <Marquee autoFill pauseOnHover direction="right">
+        <Marquee autoFill pauseOnHover direction="right" speed={20}>
           <SkillsList stacks={BACKEND_STACKS} />
         </Marquee>
       </div>

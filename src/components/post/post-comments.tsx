@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Giscus from '@giscus/react'
+import { env } from '~/constants/env'
 
 const PostComments = () => {
   return (
@@ -8,9 +9,9 @@ const PostComments = () => {
       <Giscus
         id="comments"
         repo="BinarySenseiii/personal-website"
-        repoId="R_kgDOLyFZyw"
+        repoId={env.NEXT_PUBLIC_GISCUS_REPO_ID}
         category="General"
-        categoryId="DIC_kwDOLyFZy84CfAwY"
+        categoryId={env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
         mapping="og:title"
         term="Welcome to @giscus/react component!"
         reactionsEnabled="1"

@@ -7,10 +7,16 @@ export const env = createEnv({
     NOCODE_API_KEY: z.string().min(1),
     NOCODE_TAB_ID: z.string().min(1),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_GISCUS_REPO_ID: z.string().min(1),
+    NEXT_PUBLIC_GISCUS_CATEGORY_ID: z.string().min(1),
+  },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NOCODE_API_KEY: process.env.NOCODE_API_KEY,
     NOCODE_TAB_ID: process.env.NOCODE_TAB_ID,
+
+    NEXT_PUBLIC_GISCUS_REPO_ID: process.env.NEXT_PUBLIC_GISCUS_REPO_ID,
+    NEXT_PUBLIC_GISCUS_CATEGORY_ID: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
   },
 })
