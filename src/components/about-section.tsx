@@ -111,7 +111,7 @@ const AboutSection = () => {
           </span>
         </p>
 
-        <p className={cn(typo({ variant: 'paragraph', font: 'sans' }), 'sm:!mt-6')}>
+        <p className={cn(typo({ variant: 'paragraph', font: 'sans' }), 'sm:!mt-4')}>
           I&apos;m currently looking for a new role as a developer.{' '}
           <a
             ref={hireRef}
