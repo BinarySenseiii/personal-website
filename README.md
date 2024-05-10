@@ -59,7 +59,7 @@ explore and get inspired
 Follow these steps to run the project locally on your machine:
 
 ```bash
-git clone https://github.com/tszhong0411/honghong.me.git
+git clone https://github.com/BinarySenseiii/personal-website.git
 cd personal-website
 npm install
 ```
