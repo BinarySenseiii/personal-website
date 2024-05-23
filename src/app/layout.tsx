@@ -1,9 +1,10 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { dankMono, fontSans, ubuntu } from '~/components/ui/fonts'
 import { getSEOTags, renderSchemaTags } from '~/lib/seo'
 import { cn } from '~/lib/utils'
 import RootProviders from '~/providers'
 import '~/styles/globals.css'
-import { Analytics } from '@vercel/analytics/react'
 
 export const viewport = {
   viewportFit: 'cover',
@@ -37,7 +38,13 @@ export default function RootLayout({
         {renderSchemaTags()}
 
         <RootProviders>{children}</RootProviders>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <SpeedInsights />
+            <Analytics />
+          </>
+        )}
       </body>
     </html>
   )
