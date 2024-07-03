@@ -55,6 +55,7 @@
 }
 
 .mdx-content h2,
+.mdx-content h3,
 .mdx-content h1,
 .mdx-content h5 {
   @apply mt-3 mb-0;
@@ -88,6 +89,11 @@
 .mdx-content pre,
 [data-rehype-pretty-code-figure] [data-line] {
   @apply !font-dank el-focus-styles;
+}
+
+.mdx-content figure,
+.mdx-content pre {
+  @apply overflow-x-auto;
 }
 
 * {
