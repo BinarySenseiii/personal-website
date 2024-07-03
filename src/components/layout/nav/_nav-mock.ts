@@ -1,4 +1,4 @@
-import { createId } from '@paralleldrive/cuid2'
+import {createId} from '@paralleldrive/cuid2'
 
 export const navData = [
   {
@@ -21,6 +21,12 @@ export const navData = [
   //   id: createId(),
   //   label: 'Guests',
   //   path: '/guests',
+  // },
+
+  // {
+  //   id: createId(),
+  //   label: 'Contact',
+  //   path: '/contact',
   // },
 ]
 
