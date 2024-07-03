@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Giscus from '@giscus/react'
-import { env } from '~/constants/env'
+import {env} from '~/constants/env'
 
 const PostComments = () => {
   return (
@@ -13,13 +13,13 @@ const PostComments = () => {
         category="General"
         categoryId={env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
         mapping="og:title"
-        term="Welcome to @giscus/react component!"
+        term="Welcome to Faisal personal Portfolio"
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="top"
         theme="dark"
         lang="en"
-        loading="lazy"
+        // loading="lazy"
       />
     </div>
   )

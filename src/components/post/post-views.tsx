@@ -1,17 +1,17 @@
 'use client'
-import { Eye } from 'lucide-react'
-import React, { useEffect } from 'react'
-import { useIncrementViewCount } from '~/actions/mutations'
-import { usePostViews } from '~/actions/queries'
+import {Eye} from 'lucide-react'
+import React, {useEffect} from 'react'
+// import { useIncrementViewCount } from '~/actions/mutations'
+import {usePostViews} from '~/actions/queries'
 
-const PostViews = ({ slug }: { slug: string }) => {
-  const { data, isLoading } = usePostViews(slug)
-  const incrCount = useIncrementViewCount()
+const PostViews = ({slug}: {slug: string}) => {
+  const {data, isLoading} = usePostViews(slug)
+  // const incrCount = useIncrementViewCount()
 
-  useEffect(() => {
-    incrCount.mutate(slug)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  // incrCount.mutate(slug)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
   return (
     <dl>

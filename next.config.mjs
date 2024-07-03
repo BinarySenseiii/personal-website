@@ -1,6 +1,6 @@
-import { build } from 'velite'
+import {build} from 'velite'
 
-import { fileURLToPath } from 'node:url'
+import {fileURLToPath} from 'node:url'
 import createJiti from 'jiti'
 const jiti = createJiti(fileURLToPath(import.meta.url))
 
@@ -12,8 +12,8 @@ const isBuild = process.argv.indexOf('build') !== -1
 
 if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
   process.env.VELITE_STARTED = '1'
-  const { build } = await import('velite')
-  await build({ watch: isDev, clean: !isDev })
+  const {build} = await import('velite')
+  await build({watch: isDev, clean: !isDev})
 }
 
 /** @type {import('next').NextConfig} */
