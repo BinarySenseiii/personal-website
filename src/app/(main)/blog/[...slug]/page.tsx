@@ -1,12 +1,17 @@
-import { posts } from '#site/content'
+import {posts} from '#site/content'
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
+import {notFound} from 'next/navigation'
 import BackButton from '~/components/back-btn'
-import { MDXContent } from '~/components/mdx'
-import { JsonSchemaLD, PostComments, PostMetadata, TableOfContent } from '~/components/post'
+import {MDXContent} from '~/components/mdx'
+import {
+  JsonSchemaLD,
+  PostComments,
+  PostMetadata,
+  TableOfContent,
+} from '~/components/post'
 import Tags from '~/components/tags'
-import { getSEOTags } from '~/lib/seo'
-import { cn } from '~/lib/utils'
+import {getSEOTags} from '~/lib/seo'
+import {cn} from '~/lib/utils'
 import '~/styles/mdx.css'
 
 interface BlogPostParams {
@@ -26,11 +31,13 @@ async function getPostFromParams(params: BlogPostParams['params']) {
   return post
 }
 
-export async function generateStaticParams(): Promise<BlogPostParams['params'][]> {
-  return posts.map(post => ({ slug: post.slugAsParams.split('/') }))
+export async function generateStaticParams(): Promise<
+  BlogPostParams['params'][]
+> {
+  return posts.map(post => ({slug: post.slugAsParams.split('/')}))
 }
 
-export async function generateMetadata({ params }: BlogPostParams) {
+export async function generateMetadata({params}: BlogPostParams) {
   const post = await getPostFromParams(params)
 
   return getSEOTags({
@@ -56,7 +63,7 @@ export async function generateMetadata({ params }: BlogPostParams) {
   })
 }
 
-export default async function BlogDetail({ params }: BlogPostParams) {
+export default async function BlogDetail({params}: BlogPostParams) {
   const post = await getPostFromParams(params)
 
   return (
@@ -89,7 +96,10 @@ export default async function BlogDetail({ params }: BlogPostParams) {
           </div>
         </div>
 
-        <main id="main-content" className={cn(`prose-invert mdx-content  !w-full`)}>
+        <main
+          id="main-content"
+          className={cn(`prose-invert mdx-content  !w-full`)}
+        >
           <MDXContent code={post.body} />
         </main>
 

@@ -106,6 +106,9 @@
   aspect-ratio: 16/9;
 }
 
+.mdx-content a:hover {
+  border-bottom: 2px dashed;
+}
 .mdx-content div[data-ntpc='YouTubeEmbed'] lite-youtube {
   border-radius: 6px;
   position: absolute;

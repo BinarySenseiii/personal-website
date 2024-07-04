@@ -24,7 +24,11 @@ const PostItem: React.FC<Post> = ({
           <PostMetadata title={title} metadata={metadata} date={date} />
         </Link>
 
-        <p className={'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'}>
+        <p
+          className={
+            'text-muted-foreground text-sm line-clamp-2 mt-1 mb-2 font-ubuntu'
+          }
+        >
           {description}
         </p>
 
