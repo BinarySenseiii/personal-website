@@ -33,8 +33,7 @@ export default function RootLayout({
           fontSans.variable,
           ubuntu.variable,
           dankMono.variable,
-        )}
-      >
+        )}>
         {renderSchemaTags()}
 
         <RootProviders>{children}</RootProviders>
