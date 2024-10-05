@@ -1,8 +1,7 @@
-import React from 'react'
-import {ProjectList, projects} from '~/components/project'
+import { ProjectList, projects } from '~/components/project'
 import SearchInput from '~/components/search-input'
 import config from '~/config'
-import {getSEOTags} from '~/lib/seo'
+import { getSEOTags } from '~/lib/seo'
 
 export const metadata: ReturnType<typeof getSEOTags> = getSEOTags({
   title: `All Projects - ${config.appName}`,
@@ -19,9 +18,9 @@ export const metadata: ReturnType<typeof getSEOTags> = getSEOTags({
   ],
 })
 
-const ProjectsPage = ({searchParams}: {searchParams: {query: string | undefined}}) => {
+const ProjectsPage = ({ searchParams }: { searchParams: { search: string | undefined } }) => {
   const filteredProjects = projects.filter(project =>
-    project.title.toLowerCase().includes(decodeURIComponent(searchParams.query || '')),
+    project.title.toLowerCase().includes(decodeURIComponent(searchParams.search || '')),
   )
 
   return (

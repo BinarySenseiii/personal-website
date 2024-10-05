@@ -1,27 +1,22 @@
 'use client'
-import {Search} from 'lucide-react'
-import {usePathname, useRouter} from 'next/navigation'
-import React, {useEffect, useState} from 'react'
-import {useDebounce} from 'use-debounce'
-import {Input} from '~/components/ui/input'
+import { Search } from 'lucide-react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import React from 'react'
+import { Input } from '~/components/ui/input'
 
 const SearchInput = () => {
   const router = useRouter()
-  const [search, setSearch] = useState('')
-  const [debouncedSearch] = useDebounce(search, 1000)
   const currentPath = usePathname()
 
-  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value.toLowerCase())
-  }
+  const params = useSearchParams()
+  const search = params.get('search') ?? ''
 
-  useEffect(() => {
-    if (!debouncedSearch) {
-      router.push(currentPath)
-    } else {
-      router.push(`${currentPath}?query=${encodeURIComponent(debouncedSearch)}`)
-    }
-  }, [currentPath, debouncedSearch, router])
+  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = e.target.value
+
+    const redirectUrl = searchValue ? `${currentPath}?search=${encodeURIComponent(e.target.value)}` : currentPath
+    router.push(redirectUrl)
+  }
 
   return (
     <div className="relative sm:max-w-xs w-full">

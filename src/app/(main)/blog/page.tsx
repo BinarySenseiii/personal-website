@@ -1,8 +1,8 @@
-import {posts} from '#site/content'
-import {PostList} from '~/components/post'
+import { posts } from '#site/content'
+import { PostList } from '~/components/post'
 import SearchInput from '~/components/search-input'
 import config from '~/config'
-import {getSEOTags} from '~/lib/seo'
+import { getSEOTags } from '~/lib/seo'
 
 export const metadata: ReturnType<typeof getSEOTags> = getSEOTags({
   title: `All Blogs - ${config.appName}`,
@@ -20,9 +20,9 @@ export const metadata: ReturnType<typeof getSEOTags> = getSEOTags({
   ],
 })
 
-const BlogPage = async ({searchParams}: {searchParams: {query: string | undefined}}) => {
+const BlogPage = async ({ searchParams }: { searchParams: { search: string | undefined } }) => {
   const filteredPosts = posts.filter(post =>
-    post.title.toLowerCase().includes(decodeURIComponent(searchParams.query || '')),
+    post.title.toLowerCase().includes(decodeURIComponent(searchParams.search || '')),
   )
 
   return (
