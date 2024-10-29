@@ -5,17 +5,18 @@ import React from 'react'
 import { Input } from '~/components/ui/input'
 
 const SearchInput = () => {
-  const router = useRouter()
-  const currentPath = usePathname()
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
-  const params = useSearchParams()
-  const search = params.get('search') ?? ''
 
   const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = e.target.value
+    const term = e.target.value
+    const params = new URLSearchParams(searchParams);
 
-    const redirectUrl = searchValue ? `${currentPath}?search=${encodeURIComponent(e.target.value)}` : currentPath
-    router.push(redirectUrl)
+    term ? params.set('search', term) : params.delete('search')
+
+    replace(`${pathname}?${params.toString()}`);
   }
 
   return (
@@ -25,7 +26,7 @@ const SearchInput = () => {
         type="search"
         placeholder="Search..."
         className="w-full rounded-lg bg-background pl-8"
-        value={search}
+        defaultValue={searchParams.get('search')?.toString()}
         onChange={onChangeHandle}
       />
     </div>
