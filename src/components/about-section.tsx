@@ -50,7 +50,7 @@ const AboutSection = () => {
         <p className={typo({variant: 'paragraph', font: 'sans'})}>
           Experienced self-taught developer with over{' '}
           <span className="text-white" ref={annotationRefs[0]}>
-            4+ years
+            5+ years
           </span>{' '}
           of crafting advanced SaaS products and B2B solutions, specializing in
           transforming imaginative designs into robust, scalable web solutions
